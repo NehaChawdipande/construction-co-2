@@ -307,9 +307,9 @@ const Footer = ({ setPage }) => {
 
 const ClientsPage = () => {
     const logos = [
-        "https://placehold.co/150x80/e2e8f0/475569?text=Client+1", "https://placehold.co/150x80/e2e8f0/475569?text=Client+2",
-        "https://placehold.co/150x80/e2e8f0/475569?text=Client+3", "https://placehold.co/150x80/e2e8f0/475569?text=Client+4",
-        "https://placehold.co/150x80/e2e8f0/475569?text=Client+5", "https://placehold.co/150x80/e2e8f0/475569?text=Client+6",
+        "pwd.jpg", "zp.jpg",
+        "mfd.png", "ord.jpg",
+        "secr.jpg", "cr.jpg","wr.jpg", "ngp.jpg"
     ];
     const extendedLogos = [...logos, ...logos];
 
@@ -322,11 +322,11 @@ const ClientsPage = () => {
                             <h2 className="text-3xl font-bold text-gray-800">Our Esteemed Clients</h2>
                             <p className="text-gray-600 mt-2">We are proud to have worked with leading organizations.</p>
                         </AnimatedSection>
-                        <div className="relative w-full overflow-hidden mask-image">
+                        <div className="relative w-full overflow-hidden">
                             <div className="flex animate-scroll">
                                 {extendedLogos.map((logo, index) => (
-                                    <div key={index} className="flex-shrink-0 w-1/3 md:w-1/6 p-4">
-                                        <img src={logo} alt={`Client logo ${index + 1}`} className="mx-auto grayscale hover:grayscale-0 transition-all duration-300" />
+                                    <div key={index} className="flex-shrink-0 w-1/3 md:w-1/6 p-4 " height="50px">
+                                        <img src={logo} alt={`Client logo ${index + 1}`}  className="mx-auto  transition-all duration-300" height="50px" />
                                     </div>
                                 ))}
                             </div>
@@ -337,7 +337,7 @@ const ClientsPage = () => {
             <style jsx>{`
                 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
                 .animate-scroll { animation: scroll 30s linear infinite; }
-                .mask-image { -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); }
+                }
             `}</style>
         </>
     );
