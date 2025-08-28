@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronLeft, ChevronRight, Menu, X, Phone, Mail, MapPin, Building, Wrench, HardHat, Lightbulb, Target, Eye, Award, Factory, Users, TrendingUp, Calendar, Send, CheckCheckIcon, CheckCircle, User, Hammer, Globe, RailSymbol, FactoryIcon, Train, Construction } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Phone, Mail, MapPin, Building, Wrench, HardHat, Lightbulb, Target, Eye, Award, Factory, Users, TrendingUp, Calendar, Send, CheckCheckIcon, CheckCircle, User, Hammer, Globe, RailSymbol, FactoryIcon, Train, Construction, ArrowBigRight, ArrowRight } from 'lucide-react';
 
 // --- Animation Variants ---
 const pageTransition = {
@@ -167,7 +167,7 @@ const Header = ({ setPage, currentPage }) => {
 
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 w-screen transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-white shadow-xl' : 'bg-transparent'}`}>
-            <div className={`w-screen px-4 sm:px-6 lg:px-8 sm:py-8 ${isMenuOpen? 'sm:pb-2': ''} md:py-4 lg:py-2`}>
+            <div className={`w-screen px-4 sm:px-6 lg:px-8 sm:py-8 ${isMenuOpen ? 'sm:pb-2' : ''} md:py-4 lg:py-2`}>
                 <div className="flex items-center justify-center gap-8 lg:h-20 sm:py-2 py-4">
                     <motion.a
                         href="/"
@@ -199,13 +199,13 @@ const Header = ({ setPage, currentPage }) => {
                             className="bg-blue-900 w-full sm:text:sm md:text-sm text-white px-2 py-2 text-center rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 md:w-36 sm:w-24"
                             whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            // style={{ width: "120px" }}
+                        // style={{ width: "120px" }}
                         >
                             Get a Quote
                         </motion.a>
                     </div>
                     <div className="md:hidden">
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={isScrolled || isMenuOpen? 'text-gray-900' : 'text-white'}>
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'}>
                             <motion.div
                                 initial={{ rotate: 0 }}
                                 animate={{ rotate: isMenuOpen ? 180 : 0 }}
@@ -762,7 +762,7 @@ const ServicesPage = () => {
                 </div>
             </section>
 
-            <section className="py-10" style={{backgroundColor: '#FAFAF6'}}>
+            <section className="py-10" style={{ backgroundColor: '#FAFAF6' }}>
                 <div className="space-y-20 md:space-y-28  md:space-y-30 px-20 md:px-16">
                     {servicesData.map((service, index) => (
                         <ServiceSection key={service.title} service={service} index={index} />
@@ -1293,8 +1293,8 @@ const WhyChooseUsPreview = () => {
 
 const FeaturedProjectsPreview = () => {
     const projects = [
-        { img: "https://images.unsplash.com/photo-1663949233461-43ac152a6fa9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Supply, Fabrication and Erection of SS 304 Line at HMX Plant.", category: "Industrial", client:"Ordnance Factory Board - Bhandara"},
-        { img: "https://images.unsplash.com/photo-1701844279504-e3a974aaafb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbnN0cnVjdGlvbiUyMHByb2plY3QlMjBpbmRpYXxlbnwwfDB8MHx8fDA%3D", title: "Construction of VIP Suites", category: "Administrative & Utility Buildings", client:'Melghat Forest Department – Melghat' },
+        { img: "https://images.unsplash.com/photo-1663949233461-43ac152a6fa9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Supply, Fabrication and Erection of SS 304 Line at HMX Plant.", category: "Industrial", client: "Ordnance Factory Board - Bhandara" },
+        { img: "https://images.unsplash.com/photo-1701844279504-e3a974aaafb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbnN0cnVjdGlvbiUyMHByb2plY3QlMjBpbmRpYXxlbnwwfDB8MHx8fDA%3D", title: "Construction of VIP Suites", category: "Administrative & Utility Buildings", client: 'Melghat Forest Department – Melghat' },
         { img: "https://images.unsplash.com/uploads/1413387158190559d80f7/6108b580?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Railway Signaling & Telecom at Central Hospital", category: "Railway", client: "Central Railways-Indian Railways" },
     ];
     return (
@@ -1315,8 +1315,16 @@ const FeaturedProjectsPreview = () => {
                             </div>
                         </motion.div>
                     ))}
+                    <div className="container my-8 px-4 sm:px-6 lg:px-8 items-center self-center">
+                        <a href="projects" className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
+                            Know More
+                        </a>
+                    </div>
                 </motion.div>
+
             </div>
+
+
         </section>
     );
 };
