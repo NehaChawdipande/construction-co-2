@@ -1308,7 +1308,7 @@ const FeaturedProjectsPreview = () => {
                         <motion.div key={index} variants={itemVariants} className="group relative overflow-hidden rounded-lg shadow-lg">
                             <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                            <div className="absolute bottom-0 left-0 p-6 opacity-0 sm:group-hover:opacity-100 sm:transition-opacity sm:duration-500 sm:transform sm:translate-y-4 sm:group-hover:translate-y-0">
+                            <div className="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
                                 <h3 className="text-white text-xl font-semibold">{project.title}</h3>
                                 <p className="text-gray-200  pt-2 font-semibold text-sm">{project.client}</p>
                                 <p className="text-blue-300 pt-2 font-semibold text-sm">{project.category}</p>
