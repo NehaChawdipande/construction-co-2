@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronLeft, ChevronRight, Menu, X, Phone, Mail, MapPin, Building, Wrench, HardHat, Lightbulb, Target, Eye, Award, Factory, Users, TrendingUp, Calendar, Send, CheckCheckIcon, CheckCircle, User, Hammer, Globe, RailSymbol, FactoryIcon, Train } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Phone, Mail, MapPin, Building, Wrench, HardHat, Lightbulb, Target, Eye, Award, Factory, Users, TrendingUp, Calendar, Send, CheckCheckIcon, CheckCircle, User, Hammer, Globe, RailSymbol, FactoryIcon, Train, Construction } from 'lucide-react';
 
 // --- Animation Variants ---
 const pageTransition = {
@@ -166,24 +166,24 @@ const Header = ({ setPage, currentPage }) => {
     };
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 w-screen transition-all duration-300 ${isScrolled ? 'bg-white shadow-xl' : 'bg-transparent'}`}>
-            <div className="w-screen px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-around h-20">
+        <header className={`fixed top-0 left-0 right-0 z-50 w-screen transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-white shadow-xl' : 'bg-transparent'}`}>
+            <div className={`w-screen px-4 sm:px-6 lg:px-8 sm:py-8 ${isMenuOpen? 'sm:pb-2': ''} md:py-4 lg:py-2`}>
+                <div className="flex items-center justify-center gap-8 lg:h-20 md:h-30 sm:h-30">
                     <motion.a
                         href="/"
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
-                        className={`font-bold text-2xl ${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'}`}
+                        className={`font-bold text-2xl sm:text:xl md:text-xl  ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
                         whileHover={{ scale: 1.1, rotate: 2 }}
                     >
                         Mohanty Construction Corp.
                     </motion.a>
                     <nav className="hidden md:block">
-                        <ul className="flex items-center space-x-8">
+                        <ul className="flex items-center lg:space-x-8 md:space-x-4 sm:space-x-2">
                             {navLinks.map(link => {
                                 const linkHref = link === 'Home' ? '/' : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
                                 return (
                                     <motion.li key={link} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                                        <a href={linkHref} onClick={(e) => { e.preventDefault(); handleNavClick(link); }} className={`font-medium transition-colors duration-300 relative ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white hover:text-blue-200'} ${currentPage === link ? 'text-blue-500' : ''}`}>
+                                        <a href={linkHref} onClick={(e) => { e.preventDefault(); handleNavClick(link); }} className={`sm:text:sm md:text-sm transition-colors duration-300 relative ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white hover:text-blue-200'} ${currentPage === link ? 'text-blue-500' : ''}`}>
                                             {link}
                                             {currentPage === link && <motion.div className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-blue-500" layoutId="underline" />}
                                         </a>
@@ -196,16 +196,16 @@ const Header = ({ setPage, currentPage }) => {
                         <motion.a
                             href="/contact-us"
                             onClick={(e) => { e.preventDefault(); handleNavClick('Contact Us'); }}
-                            className="bg-blue-900 w-full text-white px-2 py-2 text-center rounded-full font-semibold hover:bg-blue-700 transition-all duration-300"
+                            className="bg-blue-900 w-full sm:text:sm md:text-sm text-white px-2 py-2 text-center rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 md:w-36 sm:w-24"
                             whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            style={{ width: "120px" }}
+                            // style={{ width: "120px" }}
                         >
                             Get a Quote
                         </motion.a>
                     </div>
                     <div className="md:hidden">
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={isScrolled ? 'text-gray-900' : 'text-white'}>
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={isScrolled || isMenuOpen? 'text-gray-900' : 'text-white'}>
                             <motion.div
                                 initial={{ rotate: 0 }}
                                 animate={{ rotate: isMenuOpen ? 180 : 0 }}
@@ -220,7 +220,7 @@ const Header = ({ setPage, currentPage }) => {
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-white">
-                        <ul className="flex flex-col items-center space-y-4 py-4">
+                        <ul className={`flex flex-col items-center space-y-4 py-4 ${isMenuOpen && 'pb-12'}`}>
                             {navLinks.map(link => (
                                 <motion.li key={link} variants={itemVariants}>
                                     <a href={link === 'Home' ? '/' : `/${link.toLowerCase().replace(/\s+/g, '-')}`} onClick={(e) => { e.preventDefault(); handleNavClick(link); }} className="font-medium text-gray-600 hover:text-blue-600">
@@ -228,11 +228,11 @@ const Header = ({ setPage, currentPage }) => {
                                     </a>
                                 </motion.li>
                             ))}
-                            <motion.li variants={itemVariants}>
-                                <a href="/contact-us" onClick={(e) => { e.preventDefault(); handleNavClick('Contact Us'); }} className="bg-blue-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700">
+                            <motion.div variants={itemVariants} className={`${isMenuOpen && 'pt-4'}`}>
+                                <a href="/contact-us" onClick={(e) => { e.preventDefault(); handleNavClick('Contact Us'); }} className='bg-blue-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700'>
                                     Get a Quote
                                 </a>
-                            </motion.li>
+                            </motion.div>
                         </ul>
                     </motion.div>
                 )}
@@ -393,7 +393,7 @@ const HomePage = () => {
                     </motion.div>
                 </AnimatePresence>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
-                    <motion.h1 key={currentSlide + 't'} className="text-4xl md:text-6xl font-bold mb-4" variants={titleContainer} initial="hidden" animate="visible">
+                    <motion.h1 key={currentSlide + 't'} className="text-4xl px-10 md:text-6xl font-bold mb-4" variants={titleContainer} initial="hidden" animate="visible">
                         {heroTitleWords.map((word, index) => (
                             <motion.span key={index} className="inline-block mr-2" variants={titleItem}>{word}</motion.span>
                         ))}
@@ -460,22 +460,30 @@ const AboutPage = () => {
 
     return (
         <PageWrapper>
-            <div className=" w-full pt-20 absolute top-0 left-0  bg-cover bg-center bg-gray-900" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1706977527005-c430d7f977ce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`, height: '110%' }} >
+            <div className=" w-full pt-20 absolute top-0 left-0  bg-cover bg-center bg-gray-900" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1706977527005-c430d7f977ce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`, height: '100%' }} >
                 {/* This is the new div for the blur overlay */}
-            </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-sm" style={{ height: "110%" }}></div>
+            </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-md" style={{ height: "100%" }}></div>
             <section className="py-20 relative h-full">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-                    <div className="grid md:grid-cols-2 gap-12 items-start mb-24">
-                        <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1727786550996-4fa0512e633b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full h-md" /></AnimatedSection>
-                        <AnimatedSection variants={fromRightVariant} className="mt-12">
-                            <h2 className="text-3xl font-bold text-gray-100 mb-4">About Mohanty Construction Corp.</h2>
-                            <p className="text-gray-100 text-sm mb-4">Mohanty Construction Corp. Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
-                                In the 2017 Independence Day speech, Prime Minister Narendra Modi gave a call for building a 'New India' by 2022. A key pillar for 'New India' is its infrastructure; from roads to dams to power plants to affordable
-                                housing, 'New India' will be built for the successes of tomorrow. As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution
-                                process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on
-                                India’s path to growth.</p>
-                            <p className="text-gray-100 text-sm">Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.</p>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 md:gap-6 lg:gap-8 items-center mb-24">
+                        <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1727786550996-4fa0512e633b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center w-full h-1/2" /></AnimatedSection>
+
+                        <AnimatedSection variants={fromRightVariant} className="mt-6">
+
+                            <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 p-12">
+                                <div className="flex items-center justify-between mb-4">
+                                    <h2 className="text-3xl md:text-2xl font-bold">About Mohanty Construction Corp.</h2>
+                                </div>
+                                <p className="text-gray-700 text-sm mb-4">
+                                    Mohanty Construction Corp. Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
+                                    In the 2017 Independence Day speech, Prime Minister Narendra Modi gave a call for building a 'New India' by 2022. A key pillar for 'New India' is its infrastructure; from roads to dams to power plants to affordable housing, 'New India' will be built for the successes of tomorrow. As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
+                                </p>
+                                <p className="text-gray-700 text-sm">
+                                    Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.
+                                </p>
+                            </div>
                         </AnimatedSection>
+
                     </div>
                     <div>
                         <AnimatedSection variants={fromRightVariant}>
@@ -653,12 +661,12 @@ const ServiceSection = ({ service, index }) => {
 
     return (
         <div
-            className="flex flex-col md:flex-row items-center gap-8 md:gap-12 animate-fade-in-up"
+            className="flex flex-col md:flex-row items-center gap-4 md:gap-8 animate-fade-in-up"
             style={{ animationDelay }}
         >
             {/* Image Section */}
-            <div className={`w-full md:w-1/2 ${isReversed ? 'md:order-2' : ''}`}>
-              <AnimatedSection variants={fromRightVariant} >  <img
+            <div className={`w-full md:w-2/3 ${isReversed ? 'md:order-2' : ''}`}>
+                <AnimatedSection variants={fromRightVariant} >  <img
                     src={service.imageUrl}
                     alt={service.title}
                     className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-video"
@@ -668,15 +676,15 @@ const ServiceSection = ({ service, index }) => {
 
             {/* Text Content Section */}
             <div className={`w-full md:w-1/2 ${isReversed ? 'md:order-1' : ''}`}>
-              <AnimatedSection variants={fromLeftVariant}>  <div className="flex items-center gap-4 mb-4">
+                <AnimatedSection variants={fromLeftVariant}>  <div className="flex items-center gap-4 mb-4">
                     <div className={`p-2 rounded-lg ${colors.bg} bg-opacity-10`}>
                         <service.icon className={`w-8 h-8 ${colors.text}`} />
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-800">{service.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed">{service.description}</p>  </AnimatedSection>
+                    <p className="text-md text-gray-600 leading-relaxed">{service.description}</p>  </AnimatedSection>
             </div>
-          
+
         </div>
     );
 };
@@ -688,7 +696,7 @@ const ServicesPage = () => {
         {
             icon: BuildingIcon,
             title: "Structural Design",
-            description: "Comprehensive structural analysis and design for commercial and industrial buildings. Specialized engineering discipline of creating safe, stable, and resilient structures, with a particular focus on commercial and industrial buildings. This service provides comprehensive structural analysis and design, from a project's conceptual stage through to its completion. It involves a systematic process of evaluating and planning the structural framework to ensure it can withstand various forces and loads, including gravity, wind, seismic activity, and other environmental factors.",
+            description: "Comprehensive structural analysis and design for commercial and industrial buildings. Specialized engineering discipline of creating safe, stable, and resilient structures, with a particular focus on commercial and industrial buildings. This service provides comprehensive structural analysis and design, from a project's conceptual stage through to its completion.",
             color: "sky",
             imageUrl: "https://images.unsplash.com/photo-1725655469137-66ab8fac7455?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3RydWN0dXJhbCUyMGRlc2lnbnxlbnwwfDJ8MHx8fDA%3D",
         },
@@ -732,10 +740,10 @@ const ServicesPage = () => {
     return (
         <PageWrapper>
 
-            <section className="relative h-[40vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1553048686-e3d0396506b9?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <section className="relative h-[50vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1553048686-e3d0396506b9?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
                     <motion.h1
-                        className="text-2xl md:text-4xl font-bold text-white mb-4"
+                        className="text-2xl md:text-4xl font-bold text-white mb-4 mt-10"
                         variants={heroTextVariant}
                         initial="hidden"
                         animate="visible"
@@ -754,8 +762,8 @@ const ServicesPage = () => {
                 </div>
             </section>
 
-            <section className="py-10 bg-gray-200">
-                <div className="space-y-20 md:space-y-28 px-20">
+            <section className="py-10" style={{backgroundColor: '#FAFAF6'}}>
+                <div className="space-y-20 md:space-y-28  md:space-y-30 px-20 md:px-16">
                     {servicesData.map((service, index) => (
                         <ServiceSection key={service.title} service={service} index={index} />
                     ))}
@@ -764,35 +772,6 @@ const ServicesPage = () => {
         </PageWrapper>
     );
 };
-
-// const renderProjectsGrid = (projects, sectionTitle, sectionDesc) => (
-//     <section className=" py-12 md:pt-12 md:pb-12" style={{ backgroundColor: "#F6F1E9" }}>
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//             <AnimatedSection className="text-center mb-12">
-//                 <h2 className="text-3xl font-bold text-gray-800">{sectionTitle}</h2>
-//                 <p className="text-gray-600 mt-2">{sectionDesc}</p>
-//             </AnimatedSection>
-//             {projects ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-//                 {projects.map((project, index) => (
-//                     <motion.div
-//                         key={index}
-//                         className="bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-//                         variants={itemVariants}
-//                         whileHover={{ y: -5 }}
-//                     >
-//                         {/* <img src={project.image} alt={project.title} className="w-full h-56 object-cover" /> */}
-//                         <div className="p-6">
-//                             <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">{project.category}</span>
-//                             <h3 className="text-lg font-bold text-gray-800 mb-2">{project.title}</h3>
-//                             <p className="text-gray-600 text-sm"><strong>Client:</strong> {project.client}</p>
-//                             <p className="text-gray-600 text-sm"><strong>Location:</strong>  {project.location}</p>
-//                         </div>
-//                     </motion.div>
-//                 ))}
-//             </div> : <></>}
-//         </div>
-//     </section>
-// );
 
 const ProjectsPage = () => {
 
@@ -1020,10 +999,10 @@ const ProjectsPage = () => {
 
     return (
         <PageWrapper >
-            <section className="relative h-[40vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514069709437-f1c294e44e1a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <section className="relative h-[50vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514069709437-f1c294e44e1a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
                     <motion.h1
-                        className="text-2xl md:text-4xl font-bold text-white mb-4"
+                        className="text-2xl md:text-4xl font-bold text-white mb-4 mt-10"
                         variants={heroTextVariant}
                         initial="hidden"
                         animate="visible"
@@ -1048,7 +1027,7 @@ const ProjectsPage = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <AnimatedSection className="text-center mb-20">
                         <h2 className="text-3xl font-bold text-gray-800">Mohanty Construction Corp.</h2>
-                        <p className="text-gray-600 mt-2">Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways</p>
+                        <p className="text-gray-600 mt-2 px-8 text-justify">Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways</p>
                     </AnimatedSection>
                     <AnimatedSection className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-800">Explore All Our Projects</h2>
@@ -1086,17 +1065,18 @@ const ProjectsPage = () => {
                                 variants={itemVariants}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="p-2 bg-blue-100 rounded-full text-blue-600 mr-4 flex-shrink-0 align-center mb-4"
+                                <div className="p-2 rounded-full text-gray-800 mr-4 flex-shrink-0 align-center mb-4"
                                     style={{
                                         width: 'fit-content',
+                                        backgroundColor: '#CDE8E5'
                                     }}>
                                     {/* Placeholder icon. You can replace with an actual icon based on category. */}
                                     <div className="flex items-center pl-2 pr-4">
                                         <div className="inline-block mr-2">
-                                            {project.category.toLowerCase() === "railway" ? <Train></Train> : project.category.toLowerCase() === 'industrial' ? <FactoryIcon> </FactoryIcon> :<Building></Building>}
-                                          
+                                            {project.category.toLowerCase() === "railway" ? <Train></Train> : project.category.toLowerCase() === 'industrial' ? <FactoryIcon> </FactoryIcon> : <Building></Building>}
+
                                         </div>
-                                        <span className="inline-block text-xs font-semibold uppercase text-gray-500">
+                                        <span className="inline-block text-xs font-semibold uppercase text-gray-800">
                                             {project.category}
                                         </span>
                                     </div>
@@ -1133,10 +1113,10 @@ const MohantyPvtPage = () => {
 
     return (
         <PageWrapper>
-            <section className="relative h-[40vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514069709437-f1c294e44e1a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <section className="relative h-[50vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514069709437-f1c294e44e1a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
                     <motion.h1
-                        className="text-2xl md:text-4xl font-bold text-white mb-4"
+                        className="text-2xl md:text-4xl font-bold text-white mb-4 mt-10"
                         variants={heroTextVariant}
                         initial="hidden"
                         animate="visible"
@@ -1158,14 +1138,14 @@ const MohantyPvtPage = () => {
             <section className="bg-white py-12 md:pt-12 md:pb-12">
                 <div className="container mx-auto px-8 sm:px-6 lg:px-16 grid md:grid-cols-2 gap-2">
                     <AnimatedSection variants={fromLeftVariant} className="mr-10">
-                        <h3 className='text-3xl text-center mb-4 text-gray-800 md:pb-12'>Building Excellence and Innovation</h3><br></br>
+                        <h3 className='text-3xl text-center text-gray-800 pb-4'>Building Excellence and Innovation</h3><br></br>
                         <img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8MXwwfHx8MA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
                     <AnimatedSection className="text-left mb-12">
-                        <p className="text-gray-600 text-md mt-2">Mohanty Projects Private Limited is an extended and specialized wing of Mohanty Construction Corporation, a well-established entity with a proven track record in the infrastructure and construction sector. Incorporated under the provisions of the Companies Act and registered with the Ministry of Corporate Affairs, Government of India, the Company was formed to diversify and strengthen the Group’s presence in highly specialized infrastructure domains, particularly in Railway Signaling and Telecommunication (S&T) works. <br /> While Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways. <br />The creation of Mohanty Projects Private Limited represents a strategic initiative to leverage the parent organization’s legacy of reliability, resources, and operational excellence while building a specialized corporate identity dedicated to serving the railway sector. By combining the construction capabilities of Mohanty Construction Corporation with the technical expertise of Mohanty Projects Private Limited, the Group has positioned itself as a holistic infrastructure solutions provider.
+                        <p className="text-gray-600 text-md text-justify sm:mt-8 mt-2">Mohanty Projects Private Limited is an extended and specialized wing of Mohanty Construction Corporation, a well-established entity with a proven track record in the infrastructure and construction sector. Incorporated under the provisions of the Companies Act and registered with the Ministry of Corporate Affairs, Government of India, the Company was formed to diversify and strengthen the Group’s presence in highly specialized infrastructure domains, particularly in Railway Signaling and Telecommunication (S&T) works. <br /> While Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways. <br />The creation of Mohanty Projects Private Limited represents a strategic initiative to leverage the parent organization’s legacy of reliability, resources, and operational excellence while building a specialized corporate identity dedicated to serving the railway sector. By combining the construction capabilities of Mohanty Construction Corporation with the technical expertise of Mohanty Projects Private Limited, the Group has positioned itself as a holistic infrastructure solutions provider.
                             <br />The core operations of the Company encompass execution of works related to railway signaling systems, telecommunication networks, installation, testing, commissioning, and maintenance. With a team of qualified professionals, robust technical capabilities, and adherence to stringent quality and safety standards, Mohanty Projects Private Limited has established itself as a dependable service provider in this highly specialized sector.
                             <br />The Company is committed to delivering projects of national importance with integrity, precision, and timeliness, thereby contributing to the modernization and efficiency enhancement of the Indian Railways. Guided by principles of professionalism, compliance, and continuous innovation, Mohanty Projects Private Limited endeavors to strengthen its position as a trusted partner in the advancement of railway infrastructure.</p>
-                    </AnimatedSection> 
-                    </div> </section>
+                    </AnimatedSection>
+                </div> </section>
 
         </PageWrapper>
     );
@@ -1217,7 +1197,7 @@ const AboutSectionPreview = () => (
                 <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1706891713426-282a9e4ad9f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
                 <AnimatedSection variants={fromRightVariant}>
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">About Mohanty Construction</h2>
-                    <p className="text-gray-600 mb-6">For over a decade, Mohanty Construction Corp. has been a leader in providing comprehensive engineering services. Our commitment to innovation, quality, and client satisfaction has made us a trusted partner for projects of all scales.</p>
+                    <p className="text-gray-600 mb-6 text-justify">For over a decade, Mohanty Construction Corp. has been a leader in providing comprehensive engineering services. Our commitment to innovation, quality, and client satisfaction has made us a trusted partner for projects of all scales.</p>
 
                     <a href="about-us" className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
                         Know More
