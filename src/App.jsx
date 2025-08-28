@@ -168,7 +168,7 @@ const Header = ({ setPage, currentPage }) => {
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 w-screen transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-white shadow-xl' : 'bg-transparent'}`}>
             <div className={`w-screen px-4 sm:px-6 lg:px-8 sm:py-8 ${isMenuOpen? 'sm:pb-2': ''} md:py-4 lg:py-2`}>
-                <div className="flex items-center justify-center gap-8 lg:h-20 md:h-30 sm:h-30">
+                <div className="flex items-center justify-center gap-8 lg:h-20 sm:py-2 py-4">
                     <motion.a
                         href="/"
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
