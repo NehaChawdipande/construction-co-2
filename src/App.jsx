@@ -1293,9 +1293,9 @@ const WhyChooseUsPreview = () => {
 
 const FeaturedProjectsPreview = () => {
     const projects = [
-        { img: "https://images.unsplash.com/photo-1663949233461-43ac152a6fa9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Industrial Complex", category: "Completed" },
-        { img: "https://images.unsplash.com/photo-1636367393690-1f07c7413851?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGNvbnN0cnVjdGlvbiUyMHByb2plY3RzJTIwYmd8ZW58MHwwfDB8fHww", title: "Commercial Tower", category: "Ongoing" },
-        { img: "https://images.unsplash.com/photo-1701844279504-e3a974aaafb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbnN0cnVjdGlvbiUyMHByb2plY3QlMjBpbmRpYXxlbnwwfDB8MHx8fDA%3D", title: "Residential Area", category: "Completed" },
+        { img: "https://images.unsplash.com/photo-1663949233461-43ac152a6fa9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Supply, Fabrication and Erection of SS 304 Line at HMX Plant.", category: "Industrial", client:"Ordnance Factory Board - Bhandara"},
+        { img: "https://images.unsplash.com/photo-1701844279504-e3a974aaafb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbnN0cnVjdGlvbiUyMHByb2plY3QlMjBpbmRpYXxlbnwwfDB8MHx8fDA%3D", title: "Construction of VIP Suites", category: "Administrative & Utility Buildings", client:'Melghat Forest Department – Melghat' },
+        { img: "https://images.unsplash.com/uploads/1413387158190559d80f7/6108b580?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", title: "Railway Signaling & Telecom at Central Hospital", category: "Railway", client: "Central Railways-Indian Railways" },
     ];
     return (
         <section className="py-20 bg-white">
@@ -1308,9 +1308,10 @@ const FeaturedProjectsPreview = () => {
                         <motion.div key={index} variants={itemVariants} className="group relative overflow-hidden rounded-lg shadow-lg">
                             <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                            <div className="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
-                                <h3 className="text-white text-xl font-bold">{project.title}</h3>
-                                <p className="text-blue-300 text-sm">{project.category}</p>
+                            <div className="absolute bottom-0 left-0 p-6 opacity-0 sm:group-hover:opacity-100 sm:transition-opacity sm:duration-500 sm:transform sm:translate-y-4 sm:group-hover:translate-y-0">
+                                <h3 className="text-white text-xl font-semibold">{project.title}</h3>
+                                <p className="text-gray-200  pt-2 font-semibold text-sm">{project.client}</p>
+                                <p className="text-blue-300 pt-2 font-semibold text-sm">{project.category}</p>
                             </div>
                         </motion.div>
                     ))}
