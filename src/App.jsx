@@ -1283,7 +1283,7 @@ const WhyChooseUsPreview = () => {
                     ))}
                 </motion.div>
             </div>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 sm:pt-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 sm:pt-4 md:pt-6">
                 <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1566350321650-83c2b8e587a9?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full h-full" /></AnimatedSection>
             </div>
 
