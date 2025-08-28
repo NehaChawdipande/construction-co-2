@@ -462,19 +462,19 @@ const AboutPage = () => {
         <PageWrapper>
             <div className=" w-full pt-20 absolute top-0 left-0  bg-cover bg-center bg-gray-900" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1706977527005-c430d7f977ce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`, height: '110%' }} >
                 {/* This is the new div for the blur overlay */}
-            </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-sm" style={{ height: "115%" }}></div>
+            </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-sm" style={{ height: "110%" }}></div>
             <section className="py-20 relative h-full">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-10">
                     <div className="grid md:grid-cols-2 gap-12 items-start mb-24">
                         <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1727786550996-4fa0512e633b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full h-md" /></AnimatedSection>
                         <AnimatedSection variants={fromRightVariant} className="mt-12">
-                            <h2 className="text-3xl font-bold md:text-gray-600 lg:text-gray-100 mb-4">About Mohanty Construction Corp.</h2>
-                            <p className="lg:text-gray-100 text-sm md:text-gray-600 mb-4">Mohanty Construction Corp. Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
+                            <h2 className="text-3xl font-bold text-gray-100 mb-4">About Mohanty Construction Corp.</h2>
+                            <p className="text-gray-100 text-sm mb-4">Mohanty Construction Corp. Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
                                 In the 2017 Independence Day speech, Prime Minister Narendra Modi gave a call for building a 'New India' by 2022. A key pillar for 'New India' is its infrastructure; from roads to dams to power plants to affordable
                                 housing, 'New India' will be built for the successes of tomorrow. As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution
                                 process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on
                                 India’s path to growth.</p>
-                            <p className="text-gray-100 text-sm md:text-gray-100">Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.</p>
+                            <p className="text-gray-100 text-sm">Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.</p>
                         </AnimatedSection>
                     </div>
                     <div>
