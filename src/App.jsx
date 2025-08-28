@@ -166,9 +166,9 @@ const Header = ({ setPage, currentPage }) => {
     };
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-xl' : 'bg-transparent'}`}>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+        <header className={`fixed top-0 left-0 right-0 z-50 w-screen transition-all duration-300 ${isScrolled ? 'bg-white shadow-xl' : 'bg-transparent'}`}>
+            <div className="w-screen px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-around h-20">
                     <motion.a
                         href="/"
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
@@ -1157,7 +1157,9 @@ const MohantyPvtPage = () => {
 
             <section className="bg-white py-12 md:pt-12 md:pb-12">
                 <div className="container mx-auto px-8 sm:px-6 lg:px-16 grid md:grid-cols-2 gap-2">
-                    <AnimatedSection variants={fromLeftVariant} className="mr-10"><img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8MXwwfHx8MA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
+                    <AnimatedSection variants={fromLeftVariant} className="mr-10">
+                        <h3 className='text-3xl text-center mb-4 text-gray-800 md:pb-12'>Building Excellence and Innovation</h3><br></br>
+                        <img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8MXwwfHx8MA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
                     <AnimatedSection className="text-left mb-12">
                         <p className="text-gray-600 text-md mt-2">Mohanty Projects Private Limited is an extended and specialized wing of Mohanty Construction Corporation, a well-established entity with a proven track record in the infrastructure and construction sector. Incorporated under the provisions of the Companies Act and registered with the Ministry of Corporate Affairs, Government of India, the Company was formed to diversify and strengthen the Group’s presence in highly specialized infrastructure domains, particularly in Railway Signaling and Telecommunication (S&T) works. <br /> While Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways. <br />The creation of Mohanty Projects Private Limited represents a strategic initiative to leverage the parent organization’s legacy of reliability, resources, and operational excellence while building a specialized corporate identity dedicated to serving the railway sector. By combining the construction capabilities of Mohanty Construction Corporation with the technical expertise of Mohanty Projects Private Limited, the Group has positioned itself as a holistic infrastructure solutions provider.
                             <br />The core operations of the Company encompass execution of works related to railway signaling systems, telecommunication networks, installation, testing, commissioning, and maintenance. With a team of qualified professionals, robust technical capabilities, and adherence to stringent quality and safety standards, Mohanty Projects Private Limited has established itself as a dependable service provider in this highly specialized sector.
