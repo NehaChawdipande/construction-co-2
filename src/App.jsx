@@ -1199,18 +1199,20 @@ const MohantyPvtPage = () => {
 const ContactPage = () => {
     return (
         <PageWrapper>
-            <div className="h-full relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1663058480259-2213d39f4f90?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+            <div className="h-full w-screen relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1663058480259-2213d39f4f90?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
                 <div className="relative inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
 
-                    <section className="py-20 ">
-                        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* <section className="py-20 "> */}
+                        <div className="lg:p-12 w-screen sm:p-6 md:p-8 p-6">
                             <AnimatedSection className="text-center mb-12">
-                                <h2 className="text-3xl font-bold text-gray-100 pt-10">Contact Us</h2>
+                                <h2 className="text-3xl font-bold text-gray-100 pt-12 sm:p-14">Contact Us</h2>
                                 <p className="text-gray-100 mt-2">We'd love to hear from you. Reach out to us for any inquiries.</p>
                             </AnimatedSection>
                             <div className="grid md:grid-cols-2 gap-12">
                                 <motion.div variants={fromLeftVariant} initial="hidden" animate="visible">
-                                    <form className="space-y-6 bg-white rounded-lg border p-12">
+                                    <form className="space-y-6 bg-white rounded-lg border lg:p-8 md:p-6 sm:p-4 p-4 ">
+                                    {/* <p className="text-gray-800 mb-2 mt-4 text-xl">Your Details</p> */}
+
                                         <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
                                         <input type="tel" placeholder="Your Phone" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
                                         <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
@@ -1219,7 +1221,7 @@ const ContactPage = () => {
                                         <motion.button type="submit" className="w-full bg-blue-900 text-white p-3 rounded-md font-semibold hover:bg-blue-700" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Send Message</motion.button>
                                     </form>
                                 </motion.div>
-                                <motion.div variants={fromRightVariant} initial="hidden" animate="visible" className="space-y-6 bg-white rounded-lg border p-12 ">
+                                <motion.div variants={fromRightVariant} initial="hidden" animate="visible" className="space-y-6 bg-white rounded-lg border lg:p-6 md:p-4 sm:p-2 p-4 ">
                                     <div className="container mx-auto px-1">
                                         <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.593921501174!2d79.07194863695279!3d21.1629887186638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c18362583bd1%3A0x4c0863f6b6ca524d!2sMohanty%20Construction%20Corporation!5e0!3m2!1sen!2sin!4v1700688691500!5m2!1sen!2sin"
@@ -1235,15 +1237,15 @@ const ContactPage = () => {
                                     <div className="flex items-start text-left"><MapPin className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Address</h4><p>Ground Floor, Chandranil Apartment, Near Tirpude College,
                                         Sadar, Nagpur – 440001</p></div></div>
 
-                                    <div className="flex items-start text-left"><Mail className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Email</h4><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400">mohantyconstructioncorporation@gmail.com</a></div></div>
+                                    <div className="flex items-start text-left"><Mail className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Email</h4><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400 break-all">mohantyconstructioncorporation@gmail.com</a></div></div>
                                     <div className="flex items-start text-left"><Phone className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Phone</h4><a href="tel:+919923365525" className="hover:text-blue-400">+91 9923365525</a></div></div>
-                                    <div className="flex items-start text-left"><Globe className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Website</h4><a href=' https://www.indiamart.com/mohantyconstructioncorporation/' target='_blank' className="hover:text-blue-400"> https://www.indiamart.com/mohantyconstructioncorporation/</a></div></div>
+                                    <div className="flex items-start text-left"><Globe className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Website</h4><a href=' https://www.indiamart.com/mohantyconstructioncorporation/' target='_blank' className="hover:text-blue-400 underline"> IndiaMart website</a></div></div>
 
                                 </motion.div>
 
                             </div>
                         </div>
-                    </section>
+                    {/* </section> */}
                 </div>
             </div>
         </PageWrapper>
@@ -1303,7 +1305,7 @@ const ServicesSectionPreview = () => {
         <section className="py-20 bg-white">
             <div className=" w-full bg-cover bg-center bg-gray-900 " style={{ backgroundImage: `url(https://images.unsplash.com/photo-1706977527005-c430d7f977ce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`, height: '100%' }} >
                 {/* This is the new div for the blur overlay */}
-                <div className="w-full h-full backdrop-filter p-20  inset-0 bg-black bg-opacity-30" style={{ height: "100%" }}>
+                <div className="w-full h-full backdrop-filter p-8 sm:p-10 md:sm-p-12 lg:p-16  inset-0 bg-black bg-opacity-30" style={{ height: "100%" }}>
                     <AnimatedSection className="text-center mb-6">
                         <h2 className="text-3xl font-bold text-gray-100">Our Services</h2>
                         <h2 className="text-xl text-gray-100 mt-4 mb-10">We offer a wide range of construction solutions, designed to meet your every need.</h2>
