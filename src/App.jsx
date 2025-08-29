@@ -175,10 +175,10 @@ const Header = ({ setPage, currentPage }) => {
                     <motion.a
                         href="/"
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
-                        className={`font-bold text-2xl sm:text:xl md:text-xl  ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
+                        className={`font-bold text-xl sm:text:lg md:text-lg  ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
                         whileHover={{ scale: 1.1, rotate: 2 }}
                     >
-                        Mohanty Construction Corp.
+                        Mohanty<br/>Construction  Corporation
                     </motion.a>
                     <nav className="hidden md:block">
                         <ul className="flex items-center lg:space-x-8 md:space-x-4 sm:space-x-2">
@@ -202,7 +202,6 @@ const Header = ({ setPage, currentPage }) => {
                             className="bg-blue-900 w-full sm:text:sm md:text-sm text-white px-2 py-2 text-center rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 md:w-36 sm:w-24"
                             whileHover={{ scale: 1.1, y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                        // style={{ width: "120px" }}
                         >
                             Get a Quote
                         </motion.a>
@@ -257,7 +256,11 @@ const Footer = ({ setPage }) => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                     <motion.div variants={itemVariants}>
-                        <h3 className="text-xl font-bold text-white mb-4">Mohanty Construction Corp.</h3>
+                       <div  className='w-20 h-20 flex inline-flex'>
+                        <img src="logo.png" alt="logo" />
+                        </div> 
+                        <h3 className="text-xl font-bold text-white mb-4 flex inline-flex
+                        ">Mohanty Construction Corp.</h3>
                         <p className="text-sm">Your trusted partner in engineering excellence, delivering innovative and sustainable solutions for a better future.</p>
                     </motion.div>
                     <motion.div variants={itemVariants}>
@@ -293,7 +296,7 @@ const Footer = ({ setPage }) => {
             </div>
             <div className="bg-gray-800 py-4">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
-                    <p>&copy; {new Date().getFullYear()} Mohanty Construction Corp.. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Mohanty Construction Corp. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
