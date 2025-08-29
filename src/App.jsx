@@ -178,7 +178,7 @@ const Header = ({ setPage, currentPage }) => {
                         className={`font-bold text-xl sm:text:lg md:text-lg  ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
                         whileHover={{ scale: 1.1, rotate: 2 }}
                     >
-                        Mohanty<br/>Construction  Corporation
+                        Mohanty<br />Construction  Corporation
                     </motion.a>
                     <nav className="hidden md:block">
                         <ul className="flex items-center lg:space-x-8 md:space-x-4 sm:space-x-2">
@@ -256,9 +256,9 @@ const Footer = ({ setPage }) => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                     <motion.div variants={itemVariants}>
-                       <div  className='w-20 h-20 flex inline-flex'>
-                        <img src="logo.png" alt="logo" />
-                        </div> 
+                        <div className='w-20 h-20 flex inline-flex'>
+                            <img src="logo.png" alt="logo" />
+                        </div>
                         <h3 className="text-xl font-bold text-white mb-4 flex inline-flex
                         ">Mohanty Construction Corp.</h3>
                         <p className="text-sm">Your trusted partner in engineering excellence, delivering innovative and sustainable solutions for a better future.</p>
@@ -562,6 +562,18 @@ const AboutPage = () => {
                         {/* </div> */}
 
                     </div>
+                    <div className='mb-24'>
+                        <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800">Our Milestones</h2></AnimatedSection>
+                        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className=' object-contain '>
+                                <img src="cert1.png" alt="cert" ></img>
+                            </div>
+                            <div className=' object-contain '>
+                                <img src="cert2.png" alt="cert2"></img>
+                            </div>
+                        </div>
+
+                    </div>
                     <div>
                         <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800">Our Journey</h2></AnimatedSection>
                         <div className="relative">
@@ -584,6 +596,8 @@ const AboutPage = () => {
                             ))}
                         </div>
                     </div>
+
+
                 </div>
             </section>
             {/* </div> */}
@@ -1204,7 +1218,7 @@ const ContactPage = () => {
                                     </form>
                                 </motion.div>
                                 <motion.div variants={fromRightVariant} initial="hidden" animate="visible" className="space-y-6 bg-white rounded-lg border p-12 ">
-                                      <div className="container mx-auto px-1">
+                                    <div className="container mx-auto px-1">
                                         <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.593921501174!2d79.07194863695279!3d21.1629887186638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c18362583bd1%3A0x4c0863f6b6ca524d!2sMohanty%20Construction%20Corporation!5e0!3m2!1sen!2sin!4v1700688691500!5m2!1sen!2sin"
                                             width="100%"
@@ -1222,7 +1236,7 @@ const ContactPage = () => {
                                     <div className="flex items-start text-left"><Mail className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Email</h4><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400">mohantyconstructioncorporation@gmail.com</a></div></div>
                                     <div className="flex items-start text-left"><Phone className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Phone</h4><a href="tel:+919923365525" className="hover:text-blue-400">+91 9923365525</a></div></div>
                                     <div className="flex items-start text-left"><Globe className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Website</h4><a href=' https://www.indiamart.com/mohantyconstructioncorporation/' target='_blank' className="hover:text-blue-400"> https://www.indiamart.com/mohantyconstructioncorporation/</a></div></div>
-                                  
+
                                 </motion.div>
 
                             </div>
