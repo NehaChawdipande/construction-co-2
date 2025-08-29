@@ -563,12 +563,14 @@ const AboutPage = () => {
 
                     </div>
                     <div className='mb-24'>
-                        <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800">Our Milestones</h2></AnimatedSection>
+                        <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800 mb-6">Our Pledge </h2>
+                        <p  className="text-gray-600 mb-6 text-center" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
+                        </AnimatedSection>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className=' object-contain '>
+                            <div className=' object-fill '>
                                 <img src="cert1.png" alt="cert" ></img>
                             </div>
-                            <div className=' object-contain '>
+                            <div className=' object-fill '>
                                 <img src="cert2.png" alt="cert2"></img>
                             </div>
                         </div>
