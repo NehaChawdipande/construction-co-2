@@ -260,7 +260,7 @@ const Footer = ({ setPage }) => {
                             <img src="logo.png" alt="logo" />
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4 flex inline-flex
-                        ">Mohanty Construction Corp.</h3>
+                        ">Mohanty Construction Corporation</h3>
                         <p className="text-sm">Your trusted partner in engineering excellence, delivering innovative and sustainable solutions for a better future.</p>
                     </motion.div>
                     <motion.div variants={itemVariants}>
@@ -296,7 +296,7 @@ const Footer = ({ setPage }) => {
             </div>
             <div className="bg-gray-800 py-4">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
-                    <p>&copy; {new Date().getFullYear()} Mohanty Construction Corp. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Mohanty Construction Corporation All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
@@ -439,7 +439,7 @@ const HomePage = () => {
 
 const AboutPage = () => {
     const journey = [
-        { year: "1992", event: "Company Inception", description: "Mohanty Construction Corp. was founded with a vision to provide top-tier engineering solutions." },
+        { year: "1992", event: "Company Inception", description: "Mohanty Construction Corporation was founded with a vision to provide top-tier engineering solutions." },
         { year: "2001", event: "First Major Project", description: "Successfully completed our first large-scale industrial project, setting a benchmark for quality." },
         { year: "2010", event: "ISO Certification", description: "Achieved ISO 9001 certification, a testament to our commitment to quality management." },
         { year: "2018", event: "Expansion Overseas", description: "Expanded our operations internationally, undertaking projects in the Middle East." },
@@ -478,10 +478,10 @@ const AboutPage = () => {
 
                             <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 p-12">
                                 <div className="flex items-center justify-between mb-4">
-                                    <h2 className="text-3xl md:text-2xl font-bold">About Mohanty Construction Corp.</h2>
+                                    <h2 className="text-3xl md:text-2xl font-bold">About Mohanty Construction Corporation</h2>
                                 </div>
                                 <p className="text-gray-700 sm:text-sm md:text-md lg:text-md mb-4">
-                                    Mohanty Construction Corp. Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
+                                    Mohanty Construction Corporation Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
                                     In the 2017 Independence Day speech, Prime Minister Narendra Modi gave a call for building a 'New India' by 2022. A key pillar for 'New India' is its infrastructure; from roads to dams to power plants to affordable housing, 'New India' will be built for the successes of tomorrow. As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
                                 </p>
                                 <p className="text-gray-700 sm:text-sm md:text-md lg:text-md">
@@ -564,7 +564,7 @@ const AboutPage = () => {
                     </div>
                     <div className='mb-24'>
                         <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800 mb-6">Our Pledge </h2>
-                        <p  className="text-gray-600 mb-6 text-center" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
+                            <p className="text-gray-600 mb-6 text-center" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
                         </AnimatedSection>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
                             <div className=' object-fill '>
@@ -804,199 +804,249 @@ const ProjectsPage = () => {
             "title": "Construction of Pryoxlene Sheet Plant Foundation and Assembly Buildings.",
             "category": "Industrial",
             "client": "Ordnance Factory Board - Bhandara",
-            "location": "Jawahar Nagar - Bhandara"
+            "location": "Jawahar Nagar - Bhandara",
+            "imgUrl": "1.jpg"
         },
         {
             "title": "Construction of Double Base Propellant Plant Foundation and Assembly Buildings.",
             "category": "Industrial",
             "client": "Ordnance Factory Board – Bhandara",
-            "location": "Jawahar Nagar - Bhandara"
+            "location": "Jawahar Nagar - Bhandara",
+            "imgUrl": "2.jpg"
+
         },
         {
             "title": "Repair of Stages and Fabrication of Windows with Manhole Cover of Absorption Tower.",
             "category": "Industrial",
             "client": "Ordnance Factory Board – Bhandara",
-            "location": "Jawahar Nagar - Bhandara"
+            "location": "Jawahar Nagar - Bhandara",
+            "imgUrl": "3.jpg"
+
         },
         {
             "title": "Supply, Fabrication and Erection of SS 304 Line at HMX Plant.",
             "category": "Industrial",
             "client": "Ordnance Factory Board – Bhandara",
-            "location": "Jawahar Nagar - Bhandara"
+            "location": "Jawahar Nagar - Bhandara",
+            "imgUrl": "4.jpg"
         },
         {
             "title": "Supply, Fabrication and Fitting of New Drenching Operating Line for Manual Drenching System of RX – 143 Building.",
             "category": "Industrial",
             "client": "Ordnance Factory Board – Bhandara",
-            "location": "Jawahar Nagar - Bhandara"
+            "location": "Jawahar Nagar - Bhandara",
+            "imgUrl": "5.jpg"
+
         },
         {
             "title": "Fabrication and fitting of CNA and WNA lines with required fitting and accessories.",
             "category": "Industrial",
             "client": "Ordnance Factory Board – Bhandara",
-            "location": "Jawahar Nagar - Bhandara"
+            "location": "Jawahar Nagar - Bhandara",
+            "imgUrl": "6.jpg"
         },
         {
             title: 'Underground HDPE Line Installation',
             category: 'Industrial',
             client: 'Ordnance Factory Board – Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "7.jpg"
         },
         {
             title: 'HDPE Waste Water Line Replacement',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "8.jpg"
         },
         {
             title: 'NOX Blower Line Modification',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "9.png"
         },
         {
             title: 'Grit Structure & Blower Strengthening',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "10.jpg"
         },
         {
             title: 'Chiller Line Lagging and Cladding',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "11.jpg"
         },
         {
             title: 'Steam Line Fabrication & Commissioning',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "12.jpg"
         },
         {
             title: 'Compressed Air Line Installation',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "13.jpg"
         },
         {
             title: 'Water Line Installation',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "14.jpg"
         },
         {
             title: 'Autoclave Coil Fabrication',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "15.jpg"
         },
         {
             title: 'SNA Line Fabrication',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "16.jpg"
         },
         {
             title: 'Intake Fume Line Replacement',
             category: 'Industrial',
             client: 'Ordnance Factory Board - Bhandara',
-            location: 'Jawahar Nagar - Bhandara'
+            location: 'Jawahar Nagar - Bhandara',
+            imgUrl: "165.jpg"
+
         },
         {
             title: 'Demolition of OHE Structures',
             category: 'Railway',
             client: 'Western Railways- Indian Railways',
-            location: 'Mumbai, Maharashtra'
+            location: 'Mumbai, Maharashtra',
+            imgUrl: "168.jpg"
+
         },
         {
             title: 'Railway Signaling & Telecom at Central Hospital',
             category: 'Railway',
             client: 'Central Railways-Indian Railways',
-            location: 'Byculla – Mumbai, Maharashtra'
+            location: 'Byculla – Mumbai, Maharashtra',
+            imgUrl: "17.jpg"
+
         },
         {
             title: 'Railway Signaling & Telecom at Bilaspur Station',
             category: 'Railway',
             client: 'South East Central Railways-Indian Railways',
-            location: 'Bilaspur - Chhattisgarh'
+            location: 'Bilaspur - Chhattisgarh',
+            imgUrl: "18.jpg"
+
         },
         {
             "title": "Construction of Tourist Toilet Blocks",
             "category": "Administrative & Utility Buildings",
             "client": "Melghat Forest Department - Melghat",
-            "location": "Chikhaldara - Amravati"
+            "location": "Chikhaldara - Amravati",
+            imgUrl: "19.jpg"
+
         },
         {
             "title": "Repairs and Renovation of Forest Quarters",
             "category": "Administrative & Utility Buildings",
             "client": "Melghat Forest Department – Melghat",
-            "location": "Chikhaldara - Amravati"
+            "location": "Chikhaldara - Amravati",
+            imgUrl: "20.jpg"
+
         },
         {
             "title": "Repairs and Renovation of Forest Quarters",
             "category": "Administrative & Utility Buildings",
             "client": "Melghat Forest Department – Melghat",
-            "location": "Paratwada - Amravati"
+            "location": "Paratwada - Amravati",
+            imgUrl: "21.jpg"
+
         },
         {
             "title": "Construction of VIP Suites",
             "category": "Administrative & Utility Buildings",
             "client": "Melghat Forest Department – Melghat",
-            "location": "Chikhaldara - Amravati"
+            "location": "Chikhaldara - Amravati",
+            imgUrl: "22.jpg"
+
         },
         {
             "title": "Construction of Protection Camps",
             "category": "Administrative & Utility Buildings",
             "client": "Melghat Forest Department – Melghat",
-            "location": "Chikhaldara - Amravati"
+            "location": "Chikhaldara - Amravati",
+            imgUrl: "23.jpg"
+
         },
         {
             "title": "Renovation and upgradation of Rural Hospital",
             "category": "Administrative & Utility Buildings",
             "client": "National Health Mission",
-            "location": "Katol – Nagpur"
+            "location": "Katol – Nagpur",
+            imgUrl: "24.jpg"
         },
         {
             "title": "Construction of School Building",
             "category": "Administrative & Utility Buildings",
             "client": "Zilla Parishad – Nagpur",
-            "location": "Kelvad – Saoner"
+            "location": "Kelvad – Saoner",
+            imgUrl: "25.jpg"
         },
         {
             "title": "Construction of School Building",
             "category": "Administrative & Utility Buildings",
             "client": "Zilla Parishad – Nagpur",
-            "location": "Dahalgaon – Saoner"
+            "location": "Dahalgaon – Saoner",
+            imgUrl: "26.jpg"
         },
         {
             "title": "Construction of School Building",
             "category": "Administrative & Utility Buildings",
             "client": "Buty Public School",
-            "location": "Kamptee – Nagpur"
+            "location": "Kamptee – Nagpur",
+            imgUrl: "butypublic.png"
         },
         {
             "title": "Construction of Commercial Complex",
             "category": "Administrative & Utility Buildings",
             "client": "Buty Chambers",
-            "location": "Sitabuldi – Nagpur"
+            "location": "Sitabuldi – Nagpur",
+            imgUrl: "27.jpg"
+
         },
         {
             "title": "Construction of Girls Hostel",
             "category": "Administrative & Utility Buildings",
             "client": "Charu Girls Hostel",
-            "location": "Sadar – Nagpur"
+            "location": "Sadar – Nagpur",
+            imgUrl: "28.jpg"
+
+
         },
         {
             "title": "Construction of Commercial Complex",
             "category": "Administrative & Utility Buildings",
             "client": "Gigeo Construction Co. Pvt. ltd",
-            "location": "Sitabuldi – Nagpur"
+            "location": "Sitabuldi – Nagpur",
+            imgUrl: "29.jpg"
+
         },
         {
             "title": "Repairs and Renovation of Ajni Police Station",
             "category": "Administrative & Utility Buildings",
             "client": "Public Works Department - Nagpur",
-            "location": "Ajni – Nagpur"
+            "location": "Ajni – Nagpur",
+            imgUrl: "30.jpg"
+
         }
     ];
 
@@ -1048,7 +1098,7 @@ const ProjectsPage = () => {
             <section className="py-10" style={{ backgroundColor: "#f7f6f6ff" }}>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <AnimatedSection className="text-center mb-20">
-                        <h2 className="text-3xl font-bold text-gray-800">Mohanty Construction Corp.</h2>
+                        <h2 className="text-3xl font-bold text-gray-800">Mohanty Construction Corporation</h2>
                         <p className="text-gray-600 mt-2 px-8 text-justify">Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways</p>
                     </AnimatedSection>
                     <AnimatedSection className="text-center mb-12">
@@ -1087,7 +1137,13 @@ const ProjectsPage = () => {
                                 variants={itemVariants}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="p-2 rounded-full text-gray-800 mr-4 flex-shrink-0 align-center mb-4"
+
+                                <div>
+                                    <img src={project.imgUrl} alt={project.imageUrl} />
+
+                                </div>
+
+                                <div className="p-2 rounded-full text-gray-800 mr-4 mt-4 flex-shrink-0 align-center mb-4"
                                     style={{
                                         width: 'fit-content',
                                         backgroundColor: '#CDE8E5'
@@ -1104,8 +1160,8 @@ const ProjectsPage = () => {
                                     </div>
 
                                 </div>
-                                <div className="flex items-start mb-4">
 
+                                <div className="flex items-start mb-4">
                                     <div className="flex-grow">
                                         <h3 className="text-xl font-bold text-gray-700 leading-tight">{project.title}</h3>
                                     </div>
@@ -1203,48 +1259,48 @@ const ContactPage = () => {
                 <div className="relative inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
 
                     {/* <section className="py-20 "> */}
-                        <div className="lg:p-12 w-screen sm:p-6 md:p-8 p-6">
-                            <AnimatedSection className="text-center mb-12">
-                                <h2 className="text-3xl font-bold text-gray-100 pt-12 sm:p-14">Contact Us</h2>
-                                <p className="text-gray-100 mt-2">We'd love to hear from you. Reach out to us for any inquiries.</p>
-                            </AnimatedSection>
-                            <div className="grid md:grid-cols-2 gap-12">
-                                <motion.div variants={fromLeftVariant} initial="hidden" animate="visible">
-                                    <form className="space-y-6 bg-white rounded-lg border lg:p-8 md:p-6 sm:p-4 p-4 ">
+                    <div className="lg:p-12 w-screen sm:p-6 md:p-8 p-6">
+                        <AnimatedSection className="text-center mb-12">
+                            <h2 className="text-3xl font-bold text-gray-100 pt-12 sm:p-14">Contact Us</h2>
+                            <p className="text-gray-100 mt-2">We'd love to hear from you. Reach out to us for any inquiries.</p>
+                        </AnimatedSection>
+                        <div className="grid md:grid-cols-2 gap-12">
+                            <motion.div variants={fromLeftVariant} initial="hidden" animate="visible">
+                                <form className="space-y-6 bg-white rounded-lg border lg:p-8 md:p-6 sm:p-4 p-4 ">
                                     {/* <p className="text-gray-800 mb-2 mt-4 text-xl">Your Details</p> */}
 
-                                        <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                                        <input type="tel" placeholder="Your Phone" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
-                                        <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                                        <textarea placeholder="Your Message" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                    <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                    <input type="tel" placeholder="Your Phone" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+                                    <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                    <textarea placeholder="Your Message" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
 
-                                        <motion.button type="submit" className="w-full bg-blue-900 text-white p-3 rounded-md font-semibold hover:bg-blue-700" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Send Message</motion.button>
-                                    </form>
-                                </motion.div>
-                                <motion.div variants={fromRightVariant} initial="hidden" animate="visible" className="space-y-6 bg-white rounded-lg border lg:p-6 md:p-4 sm:p-2 p-4 ">
-                                    <div className="container mx-auto px-1">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.593921501174!2d79.07194863695279!3d21.1629887186638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c18362583bd1%3A0x4c0863f6b6ca524d!2sMohanty%20Construction%20Corporation!5e0!3m2!1sen!2sin!4v1700688691500!5m2!1sen!2sin"
-                                            width="100%"
-                                            height="100%"
-                                            style={{ border: 0 }}
-                                            allowfullscreen=""
-                                            loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"
-                                            title="Google Maps Location">
-                                        </iframe>
-                                    </div>
-                                    <div className="flex items-start text-left"><MapPin className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Address</h4><p>Ground Floor, Chandranil Apartment, Near Tirpude College,
-                                        Sadar, Nagpur – 440001</p></div></div>
+                                    <motion.button type="submit" className="w-full bg-blue-900 text-white p-3 rounded-md font-semibold hover:bg-blue-700" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Send Message</motion.button>
+                                </form>
+                            </motion.div>
+                            <motion.div variants={fromRightVariant} initial="hidden" animate="visible" className="space-y-6 bg-white rounded-lg border lg:p-6 md:p-4 sm:p-2 p-4 ">
+                                <div className="container mx-auto px-1">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.593921501174!2d79.07194863695279!3d21.1629887186638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c18362583bd1%3A0x4c0863f6b6ca524d!2sMohanty%20Construction%20Corporation!5e0!3m2!1sen!2sin!4v1700688691500!5m2!1sen!2sin"
+                                        width="100%"
+                                        height="100%"
+                                        style={{ border: 0 }}
+                                        allowfullscreen=""
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        title="Google Maps Location">
+                                    </iframe>
+                                </div>
+                                <div className="flex items-start text-left"><MapPin className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Address</h4><p>Ground Floor, Chandranil Apartment, Near Tirpude College,
+                                    Sadar, Nagpur – 440001</p></div></div>
 
-                                    <div className="flex items-start text-left"><Mail className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Email</h4><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400 break-all">mohantyconstructioncorporation@gmail.com</a></div></div>
-                                    <div className="flex items-start text-left"><Phone className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Phone</h4><a href="tel:+919923365525" className="hover:text-blue-400">+91 9923365525</a></div></div>
-                                    <div className="flex items-start text-left"><Globe className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Website</h4><a href=' https://www.indiamart.com/mohantyconstructioncorporation/' target='_blank' className="hover:text-blue-400 underline"> IndiaMart website</a></div></div>
+                                <div className="flex items-start text-left"><Mail className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Email</h4><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400 break-all">mohantyconstructioncorporation@gmail.com</a></div></div>
+                                <div className="flex items-start text-left"><Phone className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Phone</h4><a href="tel:+919923365525" className="hover:text-blue-400">+91 9923365525</a></div></div>
+                                <div className="flex items-start text-left"><Globe className="text-blue-600 mt-1 mr-4 flex-shrink-0" /><div><h4 className="font-semibold">Website</h4><a href=' https://www.indiamart.com/mohantyconstructioncorporation/' target='_blank' className="hover:text-blue-400 underline"> IndiaMart website</a></div></div>
 
-                                </motion.div>
+                            </motion.div>
 
-                            </div>
                         </div>
+                    </div>
                     {/* </section> */}
                 </div>
             </div>
@@ -1260,7 +1316,7 @@ const AboutSectionPreview = () => (
                 <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1706891713426-282a9e4ad9f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
                 <AnimatedSection variants={fromRightVariant}>
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">About Mohanty Construction</h2>
-                    <p className="text-gray-600 mb-6 text-justify">For over a decade, Mohanty Construction Corp. has been a leader in providing comprehensive engineering services. Our commitment to innovation, quality, and client satisfaction has made us a trusted partner for projects of all scales.</p>
+                    <p className="text-gray-600 mb-6 text-justify">For over a decade, Mohanty Construction Corporation has been a leader in providing comprehensive engineering services. Our commitment to innovation, quality, and client satisfaction has made us a trusted partner for projects of all scales.</p>
 
                     <a href="about-us" className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
                         Know More
