@@ -287,9 +287,9 @@ const Footer = ({ setPage }) => {
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-start"><MapPin size={16} className="mr-3 mt-1 flex-shrink-0" /><span>Ground Floor, Chandranil Apartment, Near Tirpude College,
                                 Sadar, Nagpur – 440001</span></li>
-                            <li className="flex items-center"><Mail size={16} className="mr-3" /><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400">mohantyconstructioncorporation@gmail.com</a></li>
-                            <li className="flex items-center"><Phone size={16} className="mr-3" /><a href="tel:+919923365525" className="hover:text-blue-400">+91 9923365525</a></li>
-                            <li className="flex items-center"><Globe size={16} className="mr-3" /><a href="https://www.indiamart.com/mohantyconstructioncorporation/" target="_blank" rel="noreferrer" className="hover:text-blue-400">IndiaMart Website</a></li>
+                            <li className="flex items-center"><Mail size={16} className="mr-3 mt-1 flex-shrink-0" /><a href="mailto:mohantyconstructioncorporation@gmail.com" className="hover:text-blue-400">mohantyconstructioncorporation@gmail.com</a></li>
+                            <li className="flex items-center"><Phone size={16} className="mr-3 mt-1 flex-shrink-0" /><a href="tel:+919923365525" className="hover:text-blue-400">+91 9923365525</a></li>
+                            <li className="flex items-center"><Globe size={16} className="mr-3 mt-1 flex-shrink-0" /><a href="https://www.indiamart.com/mohantyconstructioncorporation/" target="_blank" rel="noreferrer" className="hover:text-blue-400">IndiaMart Website</a></li>
                         </ul>
                     </motion.div>
                 </motion.div>
@@ -798,7 +798,7 @@ const ProjectsPage = () => {
             "category": "Industrial",
             "client": "Ordnance Factory Board - Bhandara",
             "location": "Jawahar Nagar - Bhandara",
-            "imgUrl": "1.jpg"
+            "imgUrl": "ordfact.png"
         },
         {
             "title": "Construction of Double Base Propellant Plant Foundation and Assembly Buildings.",
@@ -828,7 +828,7 @@ const ProjectsPage = () => {
             "category": "Industrial",
             "client": "Ordnance Factory Board – Bhandara",
             "location": "Jawahar Nagar - Bhandara",
-            "imgUrl": "5.jpg"
+            "imgUrl": "drencher.jpg"
 
         },
         {
@@ -1072,7 +1072,7 @@ const ProjectsPage = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        Our Projects
+                        Completed Contracts
                     </motion.h1>
                     <motion.p
                         className="text-md md:text-lg text-white max-w-2xl"
@@ -1095,7 +1095,7 @@ const ProjectsPage = () => {
                         <p className="text-gray-600 mt-2 px-8 text-justify">Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways</p>
                     </AnimatedSection>
                     <AnimatedSection className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-800">Explore All Our Projects</h2>
+                        <h2 className="text-3xl font-bold text-gray-800">Explore All Our Contracts</h2>
                         <p className="text-gray-600 mt-2">A gallery of our successful ventures across various sectors.</p>
                     </AnimatedSection>
 
@@ -1254,7 +1254,7 @@ const ContactPage = () => {
                     {/* <section className="py-20 "> */}
                     <div className="lg:p-12 w-screen sm:p-6 md:p-8 p-6">
                         <AnimatedSection className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-100 pt-12 sm:p-14">Contact Us</h2>
+                            <h2 className="text-3xl font-bold text-gray-100 pt-12 sm:pt-14">Contact Us</h2>
                             <p className="text-gray-100 mt-2">We'd love to hear from you. Reach out to us for any inquiries.</p>
                         </AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12">
