@@ -154,7 +154,7 @@ const Header = ({ setPage, currentPage }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = ['Home', 'About Us', 'Services', 'Projects', 'Contact Us', 'Mohanty Projects'];
+    const navLinks = ['Home', 'About Us', 'Services', 'Assignments', 'Contact Us', 'Mohanty Projects'];
 
     const handleNavClick = (page) => {
         const pagePath = page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s+/g, '-')}`;
@@ -175,10 +175,13 @@ const Header = ({ setPage, currentPage }) => {
                     <motion.a
                         href="/"
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
-                        className={`font-bold text-xl sm:text:lg md:text-lg  ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
+                        className={`font-bold sm:text-lg md:text-xl ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
                         whileHover={{ scale: 1.1, rotate: 2 }}
                     >
-                        Mohanty<br />Construction  Corporation
+                        <h1 style={{
+                            fontSize: '2rem',
+                            marginBottom: '4px'
+                        }}>Mohanty</h1><p className=' text-sm '>Construction  Corporation</p>
                     </motion.a>
                     <nav className="hidden md:block">
                         <ul className="flex items-center lg:space-x-8 md:space-x-4 sm:space-x-2">
@@ -256,9 +259,6 @@ const Footer = ({ setPage }) => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                     <motion.div variants={itemVariants}>
-                        <div className='w-20 h-20 flex inline-flex'>
-                            <img src="logo.png" alt="logo" />
-                        </div>
                         <h3 className="text-xl font-bold text-white mb-4 flex inline-flex
                         ">Mohanty Construction Corporation</h3>
                         <p className="text-sm">Your trusted partner in engineering excellence, delivering innovative and sustainable solutions for a better future.</p>
@@ -395,7 +395,7 @@ const HomePage = () => {
                         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
                         style={{ backgroundImage: `url(${slides[currentSlide].bg})` }}
                     >
-                        <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                     </motion.div>
                 </AnimatePresence>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
@@ -525,10 +525,7 @@ const AboutPage = () => {
                         </motion.div>
                     </div>
                     <div className="mb-24">
-                        {/* Our Team section - Added based on the user request */}
-                        {/* <div className="mb-24"> */}
                         <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Our Team</h2></AnimatedSection>
-                        {/* <div className="bg-gray-50 p-8 rounded-lg shadow-lg"> */}
                         <p className="text-gray-600 mb-6 text-center">
                             Our highly experienced and diligent team of professionals assists us in offering best quality products to
                             our clients which are made in complete compliance with international quality standards. Our professionals
@@ -558,8 +555,6 @@ const AboutPage = () => {
                                 </motion.div>
                             ))}
                         </motion.div>
-                        {/* </div> */}
-                        {/* </div> */}
 
                     </div>
                     <div className='mb-24'>
@@ -576,7 +571,7 @@ const AboutPage = () => {
                         </div>
 
                     </div>
-                    <div>
+                    {/* <div>
                         <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800">Our Journey</h2></AnimatedSection>
                         <div className="relative">
                             <div className="absolute left-1/2 h-full w-0.5 bg-blue-200 transform -translate-x-1/2"></div>
@@ -597,13 +592,11 @@ const AboutPage = () => {
                                 </AnimatedSection>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
 
                 </div>
             </section>
-            {/* </div> */}
-            {/* </div> */}
         </PageWrapper>
     );
 };
