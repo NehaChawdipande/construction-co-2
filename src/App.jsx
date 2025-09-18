@@ -154,7 +154,7 @@ const Header = ({ setPage, currentPage }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = ['Home', 'About Us', 'Services', 'Assignments', 'Contact Us', 'Mohanty Projects'];
+    const navLinks = ['Home', 'About Us', 'Services', 'Completed Contracts', 'Contact Us', 'Mohanty Projects'];
 
     const handleNavClick = (page) => {
         const pagePath = page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s+/g, '-')}`;
@@ -180,7 +180,7 @@ const Header = ({ setPage, currentPage }) => {
                     >
                         <h1 style={{
                             fontSize: '2rem',
-                            marginBottom: '4px'
+                            textTransform: 'uppercase'
                         }}>Mohanty</h1><p className=' text-sm '>Construction  Corporation</p>
                     </motion.a>
                     <nav className="hidden md:block">
@@ -266,7 +266,7 @@ const Footer = ({ setPage }) => {
                     <motion.div variants={itemVariants}>
                         <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
                         <ul className="space-y-2 text-sm">
-                            {['About Us', 'Services', 'Projects', 'Contact Us'].map(link => {
+                            {['About Us', 'Services', 'Completed Contracts', 'Contact Us'].map(link => {
                                 const linkHref = `/${link.toLowerCase().replace(/\s+/g, '-')}`;
                                 return (
                                     <motion.li key={link} whileHover={{ x: 5, color: '#60A5FA' }}>
@@ -1480,7 +1480,7 @@ const getPageFromPath = (path) => {
         case '/': return 'Home';
         case '/about-us': return 'About Us';
         case '/services': return 'Services';
-        case '/projects': return 'Projects';
+        case '/completed-contracts': return 'Completed Contracts';
         case '/contact-us': return 'Contact Us';
         case '/mohanty-projects': return 'Mohanty Projects'
         default: return 'Home';
@@ -1511,7 +1511,7 @@ const App = () => {
             '': 'Home',
             'about-us': 'About Us',
             'services': 'Services',
-            'projects': 'Projects',
+            'completed-contracts': 'Completed Contracts',
             'contact-us': 'Contact Us'
         };
         setCurrentPage(pageMap[path] || 'Home');
@@ -1535,7 +1535,7 @@ const App = () => {
                 return <AboutPage />;
             case 'Services':
                 return <ServicesPage />;
-            case 'Projects':
+            case 'Completed Contracts':
                 return <ProjectsPage />;
             case 'Contact Us':
                 return <ContactPage />;
