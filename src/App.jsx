@@ -497,13 +497,13 @@ const AboutPage = () => {
                         </AnimatedSection>
 
                     </div>
-                    <div>
+                    <div className='sm:mx-4 md:mx-8 lg:mx-8 mx-4' >
                         <AnimatedSection variants={fromRightVariant}>
                             <h3 className="text-3xl font-bold text-gray-800 text-center mb-8">Our Values</h3>
                         </AnimatedSection>
 
                     </div>
-                    <div className="grid md:grid-cols-2 gap-8 mb-24">
+                    <div className="grid md:grid-cols-2 gap-8 mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
                         <AnimatedSection variants={fromLeftVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
                             <div className="flex items-center mb-4"><Target className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Mission</h3></div>
                             <p className="text-gray-600 justify">To be the customer's preferred choice by providing innovative, high-quality, and safe construction services through a robust supply chain and a commitment to developing our people and building a reputation of trust.</p>
@@ -513,7 +513,7 @@ const AboutPage = () => {
                             <p className="text-gray-600 justify">To be the industry leader and a market driven engineering construction company renowned for excellence, quality, performance and reliability in all types of construction.</p>
                         </AnimatedSection>
                     </div>
-                    <div className="mb-24">
+                    <div className="mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
                         <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2></AnimatedSection>
                         <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                             {whyUs.map((item, index) => (
@@ -530,7 +530,7 @@ const AboutPage = () => {
                             ))}
                         </motion.div>
                     </div>
-                    <div className="mb-24">
+                    <div className="mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
                         <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Our Team</h2></AnimatedSection>
                         <p className="text-gray-600 mb-6 text-center justify">
                             Our highly experienced and diligent team of professionals assists us in offering best quality products to
@@ -563,7 +563,7 @@ const AboutPage = () => {
                         </motion.div>
 
                     </div>
-                    <div className='mb-24'>
+                    <div className='mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4'>
                         <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800 mb-6">Our Pledge </h2>
                             <p className="text-gray-600 mb-6 text-center justify" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
                         </AnimatedSection>
