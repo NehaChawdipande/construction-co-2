@@ -477,7 +477,7 @@ const AboutPage = () => {
                             <img src="https://images.unsplash.com/photo-1553649305-584fd107e9b4?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center sm:w-full" style={{height: "100vh"}} />
                         </AnimatedSection>
 
-                        <AnimatedSection variants={fromRightVariant} className="mt-6 mr-4 ml-4">
+                        <AnimatedSection variants={fromRightVariant} className="mt-6">
 
                             <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 sm:px-8  md:px-10 lg:px-10 py-8 "  >
                                 <div className="flex items-center align-center justify-between mb-4">
