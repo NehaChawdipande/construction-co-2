@@ -176,12 +176,12 @@ const Header = ({ setPage, currentPage }) => {
                         href="/"
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
                         className={`font-bold sm:text-lg md:text-xl ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
-                        whileHover={{ scale: 1.1, rotate: 2 }}
+                        whileHover={{ scale: 1.1 }}
                     >
                         <h1 style={{
                             fontSize: '2rem',
                             textTransform: 'uppercase'
-                        }}>Mohanty</h1><p className=' text-sm '>Construction  Corporation</p>
+                        }}>Mohanty</h1><p className='text-sm '>Construction  Corporation</p>
                     </motion.a>
                     <nav className="hidden md:block">
                         <ul className="flex items-center lg:space-x-8 md:space-x-4 sm:space-x-2">
@@ -471,23 +471,28 @@ const AboutPage = () => {
                 {/* This is the new div for the blur overlay */}
             </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-md" style={{ height: "100%" }}></div>
             <section className="py-20 relative h-full">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto px-8 sm:px-8">
                     <div className="grid md:grid-cols-2 md:gap-6 lg:gap-8 items-center mb-24 mt-12">
-                        <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1727786550996-4fa0512e633b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center w-full h-1/2" /></AnimatedSection>
+                        <AnimatedSection variants={fromLeftVariant}>
+                            <img src="https://images.unsplash.com/photo-1553649305-584fd107e9b4?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center" style={{height: "100vh", width:"50vw"}} />
+                        </AnimatedSection>
 
-                        <AnimatedSection variants={fromRightVariant} className="mt-6">
+                        <AnimatedSection variants={fromRightVariant} className="mt-6 mr-4 ml-4">
 
-                            <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 p-12">
-                                <div className="flex items-center justify-between mb-4">
-                                    <h2 className="text-3xl md:text-2xl font-bold">About Mohanty Construction Corporation</h2>
+                            <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 p-14"  >
+                                <div className="flex items-center align-center justify-between mb-4">
+                                    <h2 className=" text-center text-3xl md:text-2xl font-bold ">About Mohanty Construction Corporation</h2>
                                 </div>
-                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-md mb-4 text-justify">
-                                    Mohanty Construction Corporation Pvt. Ltd., is ISO 9001:2015 CERTIFIED FIRM and has been a cornerstone in engineering construction. <br /> <br />
+                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-lg mb-4 text-justify">
+                                    Mohanty Construction Corporation is ISO 9001:2015 CERTIFIED FIRM and has been a cornerstone in engineering construction. <br /> <br />
                                     As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
                                 </p>
-                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-md justify">
+                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-lg mb-4 text-justify">
                                     Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.
+                                     <br/> 
+                                <br />
                                 </p>
+                               
                             </div>
                         </AnimatedSection>
 
@@ -519,8 +524,8 @@ const AboutPage = () => {
                                     whileHover={{ scale: 1.05, y: -5, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)' }}
                                 >
                                     <motion.div className="flex justify-center mb-4" whileHover={{ rotate: 360, transition: { duration: 0.8 } }}>{item.icon}</motion.div>
-                                    <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
-                                    <p className="text-gray-600  justify ">{item.description}</p>
+                                    <h4 className="text-xl font-semibold text-gray-800 mb-2 text-center">{item.title}</h4>
+                                    <p className="text-gray-600 text-justify">{item.description}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
