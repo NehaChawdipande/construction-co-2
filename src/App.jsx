@@ -1470,7 +1470,7 @@ const FeaturedProjectsPreview = () => {
                 </motion.div>
 
                 <div className="container my-8 px-4 sm:px-6 flex lg:px-8 items-center justify-center">
-                    <a href="projects" className="bg-gray-800 text-white px-8 py-3 self-center justify-center rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
+                    <a href="mohanty-projects" className="bg-gray-800 text-white px-8 py-3 self-center justify-center rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
                         Know More
                     </a>
                 </div>
