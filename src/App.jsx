@@ -1312,7 +1312,7 @@ const AboutSectionPreview = () => (
     <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-                <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1530863506128-dc9eb5c3e0fc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
+                <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1706891713426-282a9e4ad9f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
                 <AnimatedSection variants={fromRightVariant}>
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">About Mohanty Construction</h2>
                     <p className="text-gray-600 mb-6 text-justify">For over a decade, Mohanty Construction Corporation has been a leader in providing comprehensive engineering services. Our commitment to innovation, quality, and client satisfaction has made us a trusted partner for projects of all scales.</p>
