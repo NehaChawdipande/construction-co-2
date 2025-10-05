@@ -1415,8 +1415,8 @@ const WhyChooseUsPreview = () => {
         { icon: <Lightbulb className="w-8 h-8 text-blue-500" />, title: "Innovative Solutions", description: "Utilizing cutting-edge technology for efficient results." },
     ];
     return (
-        <section className="py-20 bg-gray-50 grid md:grid-cols-2">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center justify-center">
+        <section className="py-20 bg-gray-50 grid md:grid-cols-2 gap-4">
+            <div className="container mx-auto px-4 sm:px-4 lg:px-8 text-center justify-center">
                 <AnimatedSection className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
                     <h2 className="text-lg mt-2 text-gray-400">
