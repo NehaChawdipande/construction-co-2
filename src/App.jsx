@@ -681,7 +681,7 @@ const ServiceSection = ({ service, index }) => {
 
     return (
         <div
-            className="flex flex-col md:flex-row items-center gap-4 md:gap-8 animate-fade-in-up"
+            className="flex flex-col md:flex-row items-center gap-4 md:gap-8 sm:gap-10 animate-fade-in-up sm:mb-12"
             style={{ animationDelay }}
         >
             {/* Image Section */}
@@ -689,7 +689,7 @@ const ServiceSection = ({ service, index }) => {
                 <AnimatedSection variants={fromRightVariant} >  <img
                     src={service.imageUrl}
                     alt={service.title}
-                    className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-video"
+                    className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-video sm:mt-4"
                     onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found'; }}
                 /></AnimatedSection>
             </div>
@@ -783,7 +783,8 @@ const ServicesPage = () => {
             </section>
 
             <section className="py-10" style={{ backgroundColor: '#FAFAF6' }}>
-                <div className="space-y-20 md:space-y-28  md:space-y-30 px-20 md:px-16">
+                <div className="space-y-20 md:space-y-28  md:space-y-30 
+                 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
                     {servicesData.map((service, index) => (
                         <ServiceSection key={service.title} service={service} index={index} />
                     ))}
