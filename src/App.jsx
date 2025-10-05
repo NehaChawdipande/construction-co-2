@@ -267,7 +267,7 @@ const Footer = ({ setPage }) => {
                     <motion.div variants={itemVariants}>
                         <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
                         <ul className="space-y-2 text-sm">
-                            {['About Us', 'Services', 'Completed Contracts', 'Contact Us'].map(link => {
+                            {['About Us', 'Services', 'Completed Contracts', 'Contact Us', 'Mohanty Projects'].map(link => {
                                 const linkHref = `/${link.toLowerCase().replace(/\s+/g, '-')}`;
                                 return (
                                     <motion.li key={link} whileHover={{ x: 5, color: '#60A5FA' }}>
@@ -1470,7 +1470,7 @@ const FeaturedProjectsPreview = () => {
                 </motion.div>
 
                 <div className="container my-8 px-4 sm:px-6 flex lg:px-8 items-center justify-center">
-                    <a href="mohanty-projects" className="bg-gray-800 text-white px-8 py-3 self-center justify-center rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
+                    <a href="completed-contracts" className="bg-gray-800 text-white px-8 py-3 self-center justify-center rounded-full font-semibold hover:bg-gray-900 transition-all duration-300">
                         Know More
                     </a>
                 </div>
@@ -1519,7 +1519,8 @@ const App = () => {
             'about-us': 'About Us',
             'services': 'Services',
             'completed-contracts': 'Completed Contracts',
-            'contact-us': 'Contact Us'
+            'contact-us': 'Contact Us',
+            'mohanty-projects': 'Mohanty Projects'
         };
         setCurrentPage(pageMap[path] || 'Home');
     }, []);
