@@ -188,11 +188,11 @@ const Header = ({ setPage, currentPage }) => {
                             {navLinks.map(link => {
                                 const linkHref = link === 'Home' ? '/' : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
                                 return (
-                                    <motion.li key={link} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                                        <a href={linkHref} onClick={(e) => { e.preventDefault(); handleNavClick(link); }} className={`sm:text:sm md:text-sm transition-colors duration-300 relative ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white hover:text-blue-200'} ${currentPage === link ? 'text-blue-500' : ''}`}>
+                                    <motion.li key={link} whileHover={{ scale: 1.1, y: -2 }} onClick={(e) => { e.preventDefault(); handleNavClick(link); }}>
+                                        <motion.a href={linkHref} className={`sm:text:sm md:text-sm transition-colors duration-300 m-2 relative ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white hover:text-blue-200'} ${currentPage === link ? 'text-blue-500' : ''}`}>
                                             {link}
                                             {currentPage === link && <motion.div className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-blue-500" layoutId="underline" />}
-                                        </a>
+                                        </motion.a>
                                     </motion.li>
                                 );
                             })}
@@ -357,6 +357,11 @@ const HomePage = () => {
             bg: "https://images.unsplash.com/photo-1568057373106-63057e421d1c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             title: "Precision in Every Detail",
             subtitle: "From concept to completion, our expert team ensures perfection at every stage."
+        },
+        {
+            bg: "army.jpg",
+            title: "The Blueprint of Reliability and Trust",
+            subtitle: "Delivering high-security construction with strict adherence to compliance, safety, and timelines"
         }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -391,7 +396,7 @@ const HomePage = () => {
                         initial={{ opacity: 0, scale: 1.2 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ duration: 1.8, ease: "easeInOut" }}
+                        transition={{ duration: 2, ease: "easeInOut" }}
                         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
                         style={{ backgroundImage: `url(${slides[currentSlide].bg})` }}
                     >
@@ -413,16 +418,12 @@ const HomePage = () => {
                 <motion.button
                     onClick={prevSlide}
                     className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-30 hover:bg-opacity-50 z-20"
-                    whileHover={{ scale: 1.2, rotate: -10 }}
-                    whileTap={{ scale: 0.9 }}
                 >
                     <ChevronLeft size={32} />
                 </motion.button>
                 <motion.button
                     onClick={nextSlide}
                     className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-30 hover:bg-opacity-50 z-20"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    whileTap={{ scale: 0.9 }}
                 >
                     <ChevronRight size={32} />
                 </motion.button>
@@ -480,11 +481,11 @@ const AboutPage = () => {
                                 <div className="flex items-center justify-between mb-4">
                                     <h2 className="text-3xl md:text-2xl font-bold">About Mohanty Construction Corporation</h2>
                                 </div>
-                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-md mb-4">
-                                    Mohanty Construction Corporation Pvt. Ltd., is Registered Under MSME (ISO 9001:2015 CERTIFIED FIRM) and has been a cornerstone in engineering construction. <br /> <br />
-                                    In the 2017 Independence Day speech, Prime Minister Narendra Modi gave a call for building a 'New India' by 2022. A key pillar for 'New India' is its infrastructure; from roads to dams to power plants to affordable housing, 'New India' will be built for the successes of tomorrow. As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
+                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-md mb-4 text-justify">
+                                    Mohanty Construction Corporation Pvt. Ltd., is ISO 9001:2015 CERTIFIED FIRM and has been a cornerstone in engineering construction. <br /> <br />
+                                    As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
                                 </p>
-                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-md">
+                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-md justify">
                                     Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.
                                 </p>
                             </div>
@@ -500,11 +501,11 @@ const AboutPage = () => {
                     <div className="grid md:grid-cols-2 gap-8 mb-24">
                         <AnimatedSection variants={fromLeftVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
                             <div className="flex items-center mb-4"><Target className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Mission</h3></div>
-                            <p className="text-gray-600">To be the customer's preferred choice by providing innovative, high-quality, and safe construction services through a robust supply chain and a commitment to developing our people and building a reputation of trust.</p>
+                            <p className="text-gray-600 justify">To be the customer's preferred choice by providing innovative, high-quality, and safe construction services through a robust supply chain and a commitment to developing our people and building a reputation of trust.</p>
                         </AnimatedSection>
                         <AnimatedSection variants={fromRightVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
                             <div className="flex items-center mb-4"><Eye className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Vision</h3></div>
-                            <p className="text-gray-600">To be the industry leader and a market driven engineering construction company renowned for excellence, quality, performance and reliability in all types of construction.</p>
+                            <p className="text-gray-600 justify">To be the industry leader and a market driven engineering construction company renowned for excellence, quality, performance and reliability in all types of construction.</p>
                         </AnimatedSection>
                     </div>
                     <div className="mb-24">
@@ -514,19 +515,19 @@ const AboutPage = () => {
                                 <motion.div
                                     key={index}
                                     variants={itemVariants}
-                                    className="text-center p-6 bg-white rounded-lg border border-gray-200"
+                                    className="justify p-6 bg-white rounded-lg border border-gray-200"
                                     whileHover={{ scale: 1.05, y: -5, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)' }}
                                 >
                                     <motion.div className="flex justify-center mb-4" whileHover={{ rotate: 360, transition: { duration: 0.8 } }}>{item.icon}</motion.div>
                                     <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
-                                    <p className="text-gray-600">{item.description}</p>
+                                    <p className="text-gray-600  justify ">{item.description}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
                     </div>
                     <div className="mb-24">
                         <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Our Team</h2></AnimatedSection>
-                        <p className="text-gray-600 mb-6 text-center">
+                        <p className="text-gray-600 mb-6 text-center justify">
                             Our highly experienced and diligent team of professionals assists us in offering best quality products to
                             our clients which are made in complete compliance with international quality standards. Our professionals
                             are highly experienced and knowledgeable in meeting the variegated needs of our valuable clients.
@@ -559,7 +560,7 @@ const AboutPage = () => {
                     </div>
                     <div className='mb-24'>
                         <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800 mb-6">Our Pledge </h2>
-                            <p className="text-gray-600 mb-6 text-center" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
+                            <p className="text-gray-600 mb-6 text-center justify" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
                         </AnimatedSection>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
                             <div className=' object-fill '>
@@ -697,7 +698,7 @@ const ServiceSection = ({ service, index }) => {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
                 </div>
-                    <p className="text-md text-gray-600 leading-relaxed">{service.description}</p>  </AnimatedSection>
+                    <p className="text-md text-gray-600 leading-relaxed text-justify">{service.description}</p>  </AnimatedSection>
             </div>
 
         </div>
@@ -734,7 +735,7 @@ const ServicesPage = () => {
             title: "Project Consulting",
             description: "Our services go beyond simple advice, offering comprehensive strategic planning to guide your project from conception to completion. We leverage deep industry expertise to provide actionable insights, identify potential risks, and develop robust frameworks that ensure your project stays on track, on budget, and achieves its goals. By focusing on smart, proactive decision-making, we empower you to navigate complexities and secure successful outcomes.",
             color: "teal",
-            imageUrl: "https://images.unsplash.com/photo-1600645896997-3c00e14c0b23?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            imageUrl: "https://plus.unsplash.com/premium_photo-1681992175121-f51722e9bb4f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
             icon: LayersIcon,
@@ -748,7 +749,7 @@ const ServicesPage = () => {
             title: "MEP Engineering",
             description: "We provide comprehensive, integrated design services that combine the core disciplines of Structural, Mechanical, Electrical, and Plumbing engineering. This holistic approach ensures all building systems work together seamlessly from the initial concept to the final construction. We provide a single point of responsibility for these critical elements, eliminating potential conflicts and inefficiencies that arise when designing these systems in isolation. The result is a more efficient, cost-effective, and functional modern building.",
             color: "rose",
-            imageUrl: "https://images.unsplash.com/photo-1688524231834-fc8f8f71a463?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            imageUrl: "https://images.unsplash.com/photo-1731694406473-837ef073ddd4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
     ];
 
@@ -756,7 +757,7 @@ const ServicesPage = () => {
         <PageWrapper>
 
             <section className="relative h-[50vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1553048686-e3d0396506b9?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <motion.h1
                         className="text-2xl md:text-4xl font-bold text-white mb-4 mt-10"
                         variants={heroTextVariant}
@@ -1063,9 +1064,9 @@ const ProjectsPage = () => {
 
 
     return (
-        <PageWrapper >
+        <PageWrapper>
             <section className="relative h-[50vh] md:h-50 w-full" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514069709437-f1c294e44e1a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <motion.h1
                         className="text-2xl md:text-4xl font-bold text-white mb-4 mt-10"
                         variants={heroTextVariant}
@@ -1184,7 +1185,7 @@ const MohantyPvtPage = () => {
 
     return (
         <PageWrapper>
-            <section className="relative min-h-[70vh] flex items-center justify-center text-center w-full bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514069709437-f1c294e44e1a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}>
+            <section className="relative min-h-[70vh] flex items-center justify-center text-center w-full bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1576274902239-e1ac4a3363fa?q=80&w=1215&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}>
                 <div className="absolute inset-0 bg-black opacity-70"></div>
                 <div className="relative px-4 py-20 md:py-32 flex flex-col items-center">
                     <motion.h1
@@ -1222,17 +1223,17 @@ const MohantyPvtPage = () => {
                                 className="rounded-xl shadow-2xl w-full h-auto object-cover"
                             />
                         </AnimatedSection>
-                        <AnimatedSection className="text-left text-gray-600">
-                            <p className="text-lg font-semibold mb-6">
+                        <AnimatedSection className="text-justify text-gray-600">
+                            <p className="text-lg font-semibold mb-6 text-justify">
                                 Mohanty Projects Private Limited is a specialized wing of the renowned Mohanty Construction Corporation.
                             </p>
-                            <p className="mb-6">
+                            <p className="mb-6 text-justify">
                                 Mohanty Projects Private Limited is a well-established entity with a proven track record in the infrastructure and construction sector. Incorporated under the provisions of the Companies Act and registered with the Ministry of Corporate Affairs, Government of India, the Company was formed to diversify and strengthen the Group’s presence in highly specialized infrastructure domains, particularly in Railway Signaling and Telecommunication (S&T) works. <br />
                             </p>
-                            <p className="mb-6">
+                            <p className="mb-6 text-justify">
                                 While Mohanty Construction Corporation has long-standing expertise in delivering large-scale civil and infrastructure projects, Mohanty Projects Private Limited has been structured to focus on technologically intensive and mission-critical railway works. This includes design, installation, testing, commissioning, and maintenance of signaling and telecommunication systems for the Indian Railways. <br />The creation of Mohanty Projects Private Limited represents a strategic initiative to leverage the parent organization’s legacy of reliability, resources, and operational excellence while building a specialized corporate identity dedicated to serving the railway sector. By combining the construction capabilities of Mohanty Construction Corporation with the technical expertise of Mohanty Projects Private Limited, the Group has positioned itself as a holistic infrastructure solutions provider.
                             </p>
-                            <p>
+                            <p className="mb-6 text-justify">
                                 <br />The core operations of the Company encompass execution of works related to railway signaling systems, telecommunication networks, installation, testing, commissioning, and maintenance. With a team of qualified professionals, robust technical capabilities, and adherence to stringent quality and safety standards, Mohanty Projects Private Limited has established itself as a dependable service provider in this highly specialized sector.
                                 <br />The Company is committed to delivering projects of national importance with integrity, precision, and timeliness, thereby contributing to the modernization and efficiency enhancement of the Indian Railways. Guided by principles of professionalism, compliance, and continuous innovation, Mohanty Projects Private Limited endeavors to strengthen its position as a trusted partner in the advancement of railway infrastructure
                             </p>
@@ -1306,7 +1307,7 @@ const AboutSectionPreview = () => (
     <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-                <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1706891713426-282a9e4ad9f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
+                <AnimatedSection variants={fromLeftVariant}><img src="https://images.unsplash.com/photo-1530863506128-dc9eb5c3e0fc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl w-full" /></AnimatedSection>
                 <AnimatedSection variants={fromRightVariant}>
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">About Mohanty Construction</h2>
                     <p className="text-gray-600 mb-6 text-justify">For over a decade, Mohanty Construction Corporation has been a leader in providing comprehensive engineering services. Our commitment to innovation, quality, and client satisfaction has made us a trusted partner for projects of all scales.</p>
@@ -1323,7 +1324,7 @@ const AboutSectionPreview = () => (
 
 const StatsSection = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
-    const stats = [{ value: 25, label: "Years Experience" }, { value: 450, label: "Projects Completed" }, { value: 300, label: "Happy Clients" }, { value: 50, label: "Expert Staff" }];
+    const stats = [{ value: 15, label: "Years Experience" }, { value: 100, label: "Projects Completed" }, { value: 50, label: "Happy Clients" }, { value: 25, label: "Expert Staff" }];
 
     return (
         <section ref={ref} className=" bg-cover bg-fixed bg-center " style={{ backgroundImage: "url('https://images.unsplash.com/photo-1724041875463-ba0a3f2fc68c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
@@ -1385,7 +1386,7 @@ const ServicesSectionPreview = () => {
                                 {/* MODIFIED: The card's content is wrapped in a `relative` div to ensure it sits on top of the new animated background. */}
                                 <div className="relative min-h-[34vh] flex flex-col items-center text-center justify-center z-10">
                                     <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                                    <p className="text-gray-200 leading-relaxed">{service.desc}</p>
+                                    <p className="text-gray-200 leading-relaxed text-justify">{service.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -1419,10 +1420,10 @@ const WhyChooseUsPreview = () => {
                 </AnimatedSection>
                 <motion.div className="grid md:grid-cols-1 gap-4" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                     {whyUs.map((item, index) => (
-                        <motion.div key={index} variants={itemVariants} className="text-center p-6 bg-white rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                        <motion.div key={index} variants={itemVariants} className="justify-center p-6 bg-white rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                             <div className="flex justify-center mb-4">{item.icon}</div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h4>
-                            <p className="text-gray-600 text-md">{item.description}</p>
+                            <p className="text-gray-600 text-md justify-center">{item.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>
