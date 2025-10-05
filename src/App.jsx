@@ -1259,8 +1259,8 @@ const ContactPage = () => {
 
                     {/* <section className="py-20 "> */}
                     <div className="lg:p-12 w-screen sm:p-6 md:p-8 p-6">
-                        <AnimatedSection className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-100 pt-12 sm:pt-14">Contact Us</h2>
+                        <AnimatedSection className="text-center my-20 mb-12">
+                            <h2 className="text-3xl font-bold text-gray-100 ">Contact Us</h2>
                             <p className="text-gray-100 mt-2">We'd love to hear from you. Reach out to us for any inquiries.</p>
                         </AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12">
