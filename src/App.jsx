@@ -190,7 +190,7 @@ const Header = ({ setPage, currentPage }) => {
                                 const linkHref = link === 'Home' ? '/' : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
                                 return (
                                     <motion.li key={link} whileHover={{ scale: 1.1, y: -2 }} onClick={(e) => { e.preventDefault(); handleNavClick(link); }}>
-                                        <motion.a href={linkHref} className={`sm:text:sm md:text-sm transition-colors duration-300 m-2 relative ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white hover:text-blue-200'} ${currentPage === link ? 'text-blue-500' : ''}`}>
+                                        <motion.a href={linkHref} className={`sm:text:sm md:text-sm transition-colors duration-300 relative ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white hover:text-blue-200'} ${currentPage === link ? 'text-blue-500' : ''}`}>
                                             {link}
                                             {currentPage === link && <motion.div className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-blue-500" layoutId="underline" />}
                                         </motion.a>
@@ -472,14 +472,14 @@ const AboutPage = () => {
                 {/* This is the new div for the blur overlay */}
             </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-md" style={{ height: "100%" }}></div>
             <section className="py-20 relative h-full">
-                    <div className="grid md:grid-cols-2 md:gap-6 lg:gap-8 items-center mb-24 mt-12 mx-8">
+                    <div className="grid md:grid-cols-2 md:gap-6 lg:gap-8 items-center mb-24 mt-12 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
                         <AnimatedSection variants={fromLeftVariant}>
                             <img src="https://images.unsplash.com/photo-1553649305-584fd107e9b4?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center sm:w-full" style={{height: "100vh"}} />
                         </AnimatedSection>
 
                         <AnimatedSection variants={fromRightVariant} className="mt-6 mr-4 ml-4">
 
-                            <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 px-10 py-8"  >
+                            <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 sm:px-8  md:px-10 lg:px-10 py-8 "  >
                                 <div className="flex items-center align-center justify-between mb-4">
                                     <h2 className=" text-center text-3xl md:text-2xl font-bold ">About Mohanty Construction Corporation</h2>
                                 </div>
