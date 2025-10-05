@@ -177,6 +177,7 @@ const Header = ({ setPage, currentPage }) => {
                         onClick={(e) => { e.preventDefault(); handleNavClick('Home'); }}
                         className={`font-bold sm:text-lg md:text-xl ${isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white'}`}
                         whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 1.1 }}
                     >
                         <h1 style={{
                             fontSize: '2rem',
@@ -1191,7 +1192,7 @@ const MohantyPvtPage = () => {
     return (
         <PageWrapper>
             <section className="relative min-h-[70vh] flex items-center justify-center text-center w-full bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1576274902239-e1ac4a3363fa?q=80&w=1215&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}>
-                <div className="absolute inset-0 bg-black opacity-70"></div>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative px-4 py-20 md:py-32 flex flex-col items-center">
                     <motion.h1
                         className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4"
