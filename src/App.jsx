@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation, AnimatePresence, useAnimationControls } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ChevronLeft, ChevronRight, Menu, X, Phone, Mail, MapPin, Building, Wrench, HardHat, Lightbulb, Target, Eye, Award, Factory, Users, TrendingUp, Calendar, Send, CheckCheckIcon, CheckCircle, User, Hammer, Globe, RailSymbol, FactoryIcon, Train, Construction, ArrowBigRight, ArrowRight } from 'lucide-react';
-
+import { useForm, ValidationError } from "@formspree/react";
 
 
 // --- Animation Variants ---
@@ -472,109 +472,109 @@ const AboutPage = () => {
                 {/* This is the new div for the blur overlay */}
             </div><div className="absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-md" style={{ height: "100%" }}></div>
             <section className="py-20 relative h-full">
-                    <div className="grid md:grid-cols-2 md:gap-6 lg:gap-8 items-center mb-24 mt-12 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
-                        <AnimatedSection variants={fromLeftVariant}>
-                            <img src="https://images.unsplash.com/photo-1553649305-584fd107e9b4?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center sm:w-full" style={{height: "100vh"}} />
-                        </AnimatedSection>
+                <div className="grid md:grid-cols-2 md:gap-6 lg:gap-8 items-center mb-24 mt-12 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
+                    <AnimatedSection variants={fromLeftVariant}>
+                        <img src="https://images.unsplash.com/photo-1553649305-584fd107e9b4?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us" className="rounded-lg shadow-xl align-center justify-center sm:w-full" style={{ height: "100vh" }} />
+                    </AnimatedSection>
 
-                        <AnimatedSection variants={fromRightVariant} className="mt-6">
+                    <AnimatedSection variants={fromRightVariant} className="mt-6">
 
-                            <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 sm:px-8  md:px-10 lg:px-10 py-8 "  >
-                                <div className="flex items-center align-center justify-between mb-4">
-                                    <h2 className=" text-center text-3xl md:text-2xl font-bold ">About Mohanty Construction Corporation</h2>
-                                </div>
-                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-lg mb-4 text-justify">
-                                    Mohanty Construction Corporation is ISO 9001:2015 CERTIFIED FIRM and has been a cornerstone in engineering construction. <br /> <br />
-                                    As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
-                                </p>
-                                <p className="text-gray-700 sm:text-sm md:text-md lg:text-lg mb-4 text-justify">
-                                    Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.
-                                     <br/> 
+                        <div className="max-w-4xl mx-auto my-8 p-6 rounded-xl shadow-lg bg-white border border-white text-gray-700 sm:px-8  md:px-10 lg:px-10 py-8 "  >
+                            <div className="flex items-center align-center justify-between mb-4">
+                                <h2 className=" text-center text-3xl md:text-2xl font-bold ">About Mohanty Construction Corporation</h2>
+                            </div>
+                            <p className="text-gray-700 sm:text-sm md:text-md lg:text-lg mb-4 text-justify">
+                                Mohanty Construction Corporation is ISO 9001:2015 CERTIFIED FIRM and has been a cornerstone in engineering construction. <br /> <br />
+                                As a growing Engineering, Procurement and Construction (EPC) company in India, Mohanty Construction Corporation is aligning with India’s growth vision. Mohanty Construction Corporation is productively contributing by leveraging its execution process and engineering strengths. We can also nimbly capitalize on new opportunities uncovered on India’s path to growth.
+                            </p>
+                            <p className="text-gray-700 sm:text-sm md:text-md lg:text-lg mb-4 text-justify">
+                                Our reputation is built on a foundation of quality, safety, and timely execution. We are dedicated to being a complete solution provider in fabrication, erection, and commissioning, including turnkey projects.
                                 <br />
-                                </p>
-                               
-                            </div>
-                        </AnimatedSection>
+                                <br />
+                            </p>
 
-                    </div>
-                    <div className='sm:mx-4 md:mx-8 lg:mx-8 mx-4' >
-                        <AnimatedSection variants={fromRightVariant}>
-                            <h3 className="text-3xl font-bold text-gray-800 text-center mb-8">Our Values</h3>
-                        </AnimatedSection>
-
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-8 mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
-                        <AnimatedSection variants={fromLeftVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
-                            <div className="flex items-center mb-4"><Target className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Mission</h3></div>
-                            <p className="text-gray-600 justify">To be the customer's preferred choice by providing innovative, high-quality, and safe construction services through a robust supply chain and a commitment to developing our people and building a reputation of trust.</p>
-                        </AnimatedSection>
-                        <AnimatedSection variants={fromRightVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
-                            <div className="flex items-center mb-4"><Eye className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Vision</h3></div>
-                            <p className="text-gray-600 justify">To be the industry leader and a market driven engineering construction company renowned for excellence, quality, performance and reliability in all types of construction.</p>
-                        </AnimatedSection>
-                    </div>
-                    <div className="mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
-                        <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2></AnimatedSection>
-                        <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-                            {whyUs.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={itemVariants}
-                                    className="justify p-6 bg-white rounded-lg border border-gray-200"
-                                    whileHover={{ scale: 1.05, y: -5, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)' }}
-                                >
-                                    <motion.div className="flex justify-center mb-4" whileHover={{ rotate: 360, transition: { duration: 0.8 } }}>{item.icon}</motion.div>
-                                    <h4 className="text-xl font-semibold text-gray-800 mb-2 text-center">{item.title}</h4>
-                                    <p className="text-gray-600 text-justify">{item.description}</p>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-                    </div>
-                    <div className="mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
-                        <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Our Team</h2></AnimatedSection>
-                        <p className="text-gray-600 mb-6 text-center justify">
-                            Our highly experienced and diligent team of professionals assists us in offering best quality products to
-                            our clients which are made in complete compliance with international quality standards. Our professionals
-                            are highly experienced and knowledgeable in meeting the variegated needs of our valuable clients.
-                        </p>
-                        <h3 className="text-xl font-bold text-gray-800 text-center mb-8 mt-20">Our Pillars of Strength</h3>
-                        <motion.div
-                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            {teamMembers.map((member, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={itemVariants}
-                                    className="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm transition duration-300 ease-in-out hover:shadow-md"
-                                >
-                                    <div className="flex-shrink-0 mt-1">
-                                        <User className="w-6 h-6 text-blue-600" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-semibold text-gray-800">{member.name}</h4>
-                                        <p className="text-sm text-gray-500">{member.details}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-
-                    </div>
-                    <div className='mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4'>
-                        <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800 mb-6">Our Pledge </h2>
-                            <p className="text-gray-600 mb-6 text-center justify" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
-                        </AnimatedSection>
-                        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className=' object-fill '>
-                                <img src="cert1.png" alt="cert" ></img>
-                            </div>
-                            <div className=' object-fill '>
-                                <img src="cert2.png" alt="cert2"></img>
-                            </div>
                         </div>
+                    </AnimatedSection>
+
+                </div>
+                <div className='sm:mx-4 md:mx-8 lg:mx-8 mx-4' >
+                    <AnimatedSection variants={fromRightVariant}>
+                        <h3 className="text-3xl font-bold text-gray-800 text-center mb-8">Our Values</h3>
+                    </AnimatedSection>
+
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
+                    <AnimatedSection variants={fromLeftVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <div className="flex items-center mb-4"><Target className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Mission</h3></div>
+                        <p className="text-gray-600 justify">To be the customer's preferred choice by providing innovative, high-quality, and safe construction services through a robust supply chain and a commitment to developing our people and building a reputation of trust.</p>
+                    </AnimatedSection>
+                    <AnimatedSection variants={fromRightVariant} className="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <div className="flex items-center mb-4"><Eye className="w-12 h-12 text-blue-600 mr-4" /><h3 className="text-2xl font-bold text-gray-800">Our Vision</h3></div>
+                        <p className="text-gray-600 justify">To be the industry leader and a market driven engineering construction company renowned for excellence, quality, performance and reliability in all types of construction.</p>
+                    </AnimatedSection>
+                </div>
+                <div className="mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
+                    <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2></AnimatedSection>
+                    <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+                        {whyUs.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                className="justify p-6 bg-white rounded-lg border border-gray-200"
+                                whileHover={{ scale: 1.05, y: -5, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)' }}
+                            >
+                                <motion.div className="flex justify-center mb-4" whileHover={{ rotate: 360, transition: { duration: 0.8 } }}>{item.icon}</motion.div>
+                                <h4 className="text-xl font-semibold text-gray-800 mb-2 text-center">{item.title}</h4>
+                                <p className="text-gray-600 text-justify">{item.description}</p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+                <div className="mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4">
+                    <AnimatedSection className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-800">Our Team</h2></AnimatedSection>
+                    <p className="text-gray-600 mb-6 text-center justify">
+                        Our highly experienced and diligent team of professionals assists us in offering best quality products to
+                        our clients which are made in complete compliance with international quality standards. Our professionals
+                        are highly experienced and knowledgeable in meeting the variegated needs of our valuable clients.
+                    </p>
+                    <h3 className="text-xl font-bold text-gray-800 text-center mb-8 mt-20">Our Pillars of Strength</h3>
+                    <motion.div
+                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {teamMembers.map((member, index) => (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                className="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm transition duration-300 ease-in-out hover:shadow-md"
+                            >
+                                <div className="flex-shrink-0 mt-1">
+                                    <User className="w-6 h-6 text-blue-600" />
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-semibold text-gray-800">{member.name}</h4>
+                                    <p className="text-sm text-gray-500">{member.details}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+
+                </div>
+                <div className='mb-24 sm:mx-4 md:mx-8 lg:mx-8 mx-4'>
+                    <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800 mb-6">Our Pledge </h2>
+                        <p className="text-gray-600 mb-6 text-center justify" >A formal declaration of our commitment to excellence, ensuring every project is completed with integrity and a zero-tolerance policy for child labor</p>
+                    </AnimatedSection>
+                    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className=' object-fill '>
+                            <img src="cert1.png" alt="cert" ></img>
+                        </div>
+                        <div className=' object-fill '>
+                            <img src="cert2.png" alt="cert2"></img>
+                        </div>
+                    </div>
 
                     {/* <div>
                         <AnimatedSection className="text-center mb-16"><h2 className="text-3xl font-bold text-gray-800">Our Journey</h2></AnimatedSection>
@@ -1252,12 +1252,49 @@ const MohantyPvtPage = () => {
 };
 
 const ContactPage = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [phone, setPhone] = useState('');
+    const [state, handleSubmit] = useForm("mldplaej");
+    const [successmessage, setSuccessMessage] = useState('');
+
+    const [phoneError, setPhoneError] = useState('');
+
+    const handlePhoneChange = (e) => {
+        const value = e.target.value;
+        setPhone(value);
+
+        // Generic client-side validation logic
+        const phoneRegex = /^\+?(\d{1,3})?[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
+
+        if (e.target.required && value === '') {
+            setPhoneError('This field is required.');
+        } else if (value !== '' && !phoneRegex.test(value)) {
+            // Your custom error message for pattern failure
+            setPhoneError('Please enter a valid phone number (10 digits) and/or country code.');
+        } else {
+            setPhoneError('');
+        }
+    };
+
+    useEffect(() => {
+        setName('');
+        setEmail('');
+        setMessage('');
+        setPhone('');
+        setSuccessMessage("Your Message has been sent! We will get back to you shortly.");
+        setTimeout(() => {
+            setSuccessMessage('')
+        }, 7000);
+    }, [state.succeeded]);
+
+
     return (
         <PageWrapper>
-            <div className="h-full w-screen relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1663058480259-2213d39f4f90?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+            <div className="h-full w-screen relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1663058480259-2213d39f4f90?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize: "cover" }}>
                 <div className="relative inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
 
-                    {/* <section className="py-20 "> */}
                     <div className="lg:p-12 w-screen sm:p-6 md:p-8 p-6">
                         <AnimatedSection className="text-center my-20 mb-12">
                             <h2 className="text-3xl font-bold text-gray-100 ">Contact Us</h2>
@@ -1265,15 +1302,35 @@ const ContactPage = () => {
                         </AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12">
                             <motion.div variants={fromLeftVariant} initial="hidden" animate="visible">
-                                <form className="space-y-6 bg-white rounded-lg border lg:p-8 md:p-6 sm:p-4 p-4 ">
+                                <form onSubmit={handleSubmit} className="space-y-6 bg-white rounded-lg border lg:p-8 md:p-6 sm:p-4 p-4 ">
                                     {/* <p className="text-gray-800 mb-2 mt-4 text-xl">Your Details</p> */}
-
-                                    <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                                    <input type="tel" placeholder="Your Phone" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
-                                    <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                                    <textarea placeholder="Your Message" rows="6" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-
-                                    <motion.button type="submit" className="w-full bg-blue-900 text-white p-3 rounded-md font-semibold hover:bg-blue-700" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Send Message</motion.button>
+                                    <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" name='name' id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                                    <ValidationError
+                                        prefix="name"
+                                        field="name"
+                                        errors={state.errors}
+                                    />
+                                    <input type="tel" placeholder="Your Phone" id="phone" name='phone' value={phone} onChange={(e) => handlePhoneChange(e)} className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                                    {phoneError && (
+                                        <p className="text-red-500 w-full text-left text-sm">{phoneError}</p>
+                                    )}
+                                    <ValidationError
+                                        prefix="phone"
+                                        field="phone"
+                                        errors={state.errors}
+                                    />
+                                    <input type="email" placeholder="Your Email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+                                    <textarea placeholder="Your Message" id="message" name='message' rows="5" value={message} onChange={(e) => setMessage(e.target.value)} className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                    <ValidationError
+                                        prefix="Message"
+                                        field="message"
+                                        errors={state.errors}
+                                    />
+                                    <motion.button type="submit" disabled={state.errors || phoneError} className={`w-full ${(state.errors || phoneError) ? 'bg-gray-600' : 'bg-blue-900'} text-white p-3 rounded-md font-semibold hover:bg-blue-700`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Send Message</motion.button>
+                                    <div style={{ fontWeight: '500' }} className={`mt-4 text-center text-lg ${state.succeeded ? 'text-green-600' : 'text-red-600'}`}>
+                                        {state.succeeded && <h1>{successmessage}</h1>}
+                                    </div>
                                 </form>
                             </motion.div>
                             <motion.div variants={fromRightVariant} initial="hidden" animate="visible" className="space-y-6 bg-white rounded-lg border lg:p-6 md:p-4 sm:p-2 p-4 ">
@@ -1285,7 +1342,7 @@ const ContactPage = () => {
                                         style={{ border: 0 }}
                                         allowfullscreen=""
                                         loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"
+                                        referrerPolicy="no-referrer-when-downgrade"
                                         title="Google Maps Location">
                                     </iframe>
                                 </div>
